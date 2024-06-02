@@ -9,7 +9,8 @@ if (vid_capture.isOpened() == False):
 else:
     # Get frame rate information
     # You can replace 5 with CAP_PROP_FPS as well, they are enumerations
-    fps = vid_capture.get(5)
+    fps = vid_capture.get(cv2.CAP_PROP_FPS)
+    print(f"{fps.real=}")
     print('Frames per second : ', fps, 'FPS')
 
     # Get frame count
