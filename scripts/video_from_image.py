@@ -41,7 +41,7 @@ for alpha in np.linspace(0, 1, num_frames):
     frames.append(scaled)
 
 # write to MP4 file
-vidwriter = cv2.VideoWriter("videos/video_from_image.mp4", cv2.VideoWriter_fourcc(*"mp4v"), fps, video_dim)
+vidwriter = cv2.VideoWriter("../videos/video_from_image.mp4", cv2.VideoWriter_fourcc(*"mp4v"), fps, video_dim)
 for frame in frames:
     vidwriter.write(frame)
 vidwriter.release()

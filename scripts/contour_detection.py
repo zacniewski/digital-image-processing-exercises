@@ -21,7 +21,7 @@ cv2.drawContours(image=image_contour_blue, contours=contours1, contourIdx=-1, co
 # see the results
 cv2.imshow('Contour detection using blue channels only', image_contour_blue)
 cv2.waitKey(0)
-cv2.imwrite('obrazki/blue_channel.jpg', image_contour_blue)
+cv2.imwrite('../obrazki/blue_channel.jpg', image_contour_blue)
 cv2.destroyAllWindows()
 
 # detect contours using green channel and without thresholding
@@ -33,7 +33,7 @@ cv2.drawContours(image=image_contour_green, contours=contours2, contourIdx=-1, c
 # see the results
 cv2.imshow('Contour detection using green channels only', image_contour_green)
 cv2.waitKey(0)
-cv2.imwrite('obrazki/green_channel.jpg', image_contour_green)
+cv2.imwrite('../obrazki/green_channel.jpg', image_contour_green)
 cv2.destroyAllWindows()
 
 # detect contours using red channel and without thresholding
@@ -45,5 +45,5 @@ cv2.drawContours(image=image_contour_red, contours=contours3, contourIdx=-1, col
 # see the results
 cv2.imshow('Contour detection using red channels only', image_contour_red)
 cv2.waitKey(0)
-cv2.imwrite('obrazki/red_channel.jpg', image_contour_red)
+cv2.imwrite('../obrazki/red_channel.jpg', image_contour_red)
 cv2.destroyAllWindows()

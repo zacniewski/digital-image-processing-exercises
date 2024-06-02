@@ -7,7 +7,7 @@ windowName = "Resize Image"
 trackbarValue = "Scale"
 
 # read the image
-image = cv2.imread("obrazki/adrian.png")
+image = cv2.imread("../obrazki/adrian.png")
 
 # Create a window to display results and  set the flag to Autosize
 cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)

@@ -2,7 +2,7 @@ import cv2
 
 # Create a VideoCapture object and read from input file
 # If the input is the camera, pass 0 instead of the video file name
-cap = cv2.VideoCapture('videos/chaplin.mp4')
+cap = cv2.VideoCapture('../videos/chaplin.mp4')
 
 # Check if camera opened successfully
 if (cap.isOpened() == False):

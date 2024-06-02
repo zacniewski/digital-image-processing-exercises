@@ -41,4 +41,4 @@ cv2.imshow("Bottom-Right Corner", br)
 cv2.imshow("Bottom-Left Corner", bl)
 cv2.waitKey(0)
 
-cv2.imwrite("obrazki/obrazek.png", image)
+cv2.imwrite("../obrazki/obrazek.png", image)
