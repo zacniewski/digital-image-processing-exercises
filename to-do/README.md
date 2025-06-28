@@ -12,7 +12,7 @@
   - wczytaj kolorowy obraz,
   - wyświetl jego wysokość, szerokość i liczbę kanałów,
   - przekonwertuj obraz wejściowy na obraz w skali szarości,
-  - wyświetl liczbę kanałów obrazu w skali szarości,
+  - wyświetl wysokość i szerokość obrazu w skali szarości,
   - zapisz obraz wyjściowy w sposób podany w wytycznych.  
 
 ##### Zad. 2. 
@@ -59,8 +59,8 @@
   - utwórz listę `obrazki`, a w niej zapisz dwie ścieżki do dwóch różnych obrazków, ale o takich samych rozmiarach,  
   - w pętli `for` wyświetl ich wysokość, szerokość, liczbę kanałów i współrzędne środka,
   - przekonwertuj oba obrazy wejściowe na obrazy w skali szarości,
-  - na pierwszym obrazie zastosuj proste progowanie z progiem ustawionym na 127,  
-  - na drugim obrazie zastosuj rozmycie Gaussowskie o rozmiarze (3, 3),  
+  - na pierwszym obrazie zastosuj proste progowanie z progiem ustawionym na 127 i maksymalną wartością 255,  
+  - na drugim obrazie zastosuj progowanie adaptacyjne z maksymalną wartością 255, rozmiarem bloku 11 i stałą C o wartości 2,  
   - utwórz obraz wyjściowy będący połączeniem obu ww. obrazów za pomocą funkcji `hconcat()`,  
   - przykład funkcji `hconcat` [tutaj](https://www.geeksforgeeks.org/python/concatenate-images-using-opencv-in-python/),  
   - zapisz obraz wyjściowy w sposób podany w wytycznych.  
