@@ -62,5 +62,6 @@
   - na pierwszym obrazie zastosuj proste progowanie z progiem ustawionym na 127,  
   - na drugim obrazie zastosuj rozmycie Gaussowskie o rozmiarze (3, 3),  
   - utwórz obraz wyjściowy będący połączeniem obu ww. obrazów za pomocą funkcji `hconcat()`,  
+  - przykład funkcji `hconcat` [tutaj](https://www.geeksforgeeks.org/python/concatenate-images-using-opencv-in-python/),  
   - zapisz obraz wyjściowy w sposób podany w wytycznych.  
 
