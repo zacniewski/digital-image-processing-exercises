@@ -17,9 +17,10 @@ img = cv.medianBlur(img, 5)
 
 ret, th1 = cv.threshold(img, 127, 255, cv.THRESH_BINARY)
 th2 = cv.adaptiveThreshold(img, 255, cv.ADAPTIVE_THRESH_MEAN_C, \
-                           cv.THRESH_BINARY, 11, 2)
+                           cv.THRESH_BINARY, 7, 2)
 th3 = cv.adaptiveThreshold(img, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                           cv.THRESH_BINARY, 11, 2)
+                           cv.THRESH_BINARY, 7, 2)
+# cv.imwrite("adaptive-thresholding.jpg", th3)
 
 titles = ['Original Image', 'Global Thresholding (v = 127)',
           'Adaptive Mean Thresholding', 'Adaptive Gaussian Thresholding']
@@ -30,5 +31,5 @@ for i in range(4):
     plt.title(titles[i])
     plt.xticks([]), plt.yticks([])
 
-plt.savefig("obrazki/adaptive-thresholding.jpg")
+plt.savefig("adaptive-thresholding.jpg")
 plt.show()
