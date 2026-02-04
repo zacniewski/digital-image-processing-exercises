@@ -1,75 +1,72 @@
-# USAGE
-# python track.py --video video/iphonecase.mov
+# PRZYKŁAD UŻYCIA
+# python scripts/color_tracking.py --video videos/cars.mp4
 
-# import the necessary packages
+# Importowanie niezbędnych pakietów
 import imutils
 import numpy as np
 import argparse
 import time
 import cv2
 
-# construct the argument parse and parse the arguments
+# Konfiguracja parsera argumentów wiersza poleceń
 ap = argparse.ArgumentParser()
 ap.add_argument("-v", "--video",
-	help = "path to the (optional) video file")
+	help = "ścieżka do (opcjonalnego) pliku wideo")
 args = vars(ap.parse_args())
 
-# define the upper and lower boundaries for a color
-# to be considered "blue"
+# Definiowanie dolnej i górnej granicy koloru w formacie BGR (OpenCV)
+# Te wartości są używane do segmentacji obrazu (tutaj: próba znalezienia koloru niebieskiego)
+# Uwaga: wartości BGR mogą się różnić w zależności od oświetlenia i kamery
 blueLower = np.array([100, 67, 0], dtype = "uint8")
 blueUpper = np.array([255, 128, 50], dtype = "uint8")
 
-# load the video
+# Inicjalizacja strumienia wideo z pliku lub kamery
 camera = cv2.VideoCapture(args["video"])
 
-# keep looping
+# Pętla przetwarzająca kolejne klatki wideo
 while True:
-	# grab the current frame
+	# Pobranie aktualnej klatki (frame)
 	(grabbed, frame) = camera.read()
 
-	# check to see if we have reached the end of the
-	# video
+	# Sprawdzenie, czy klatka została poprawnie odczytana (koniec wideo)
 	if not grabbed:
 		break
 
-	# determine which pixels fall within the blue boundaries
-	# and then blur the binary image
+	# Określenie, które piksele mieszczą się w zdefiniowanym zakresie koloru niebieskiego (maska binarna)
 	blue = cv2.inRange(frame, blueLower, blueUpper)
+	
+	# Rozmycie maski binarnym filtrem Gaussa w celu redukcji szumów i drobnych artefaktów
 	blue = cv2.GaussianBlur(blue, (3, 3), 0)
 
-	# find contours in the image
+	# Wykrywanie konturów na masce binarnej
 	cnts = cv2.findContours(blue.copy(), cv2.RETR_EXTERNAL,
 		cv2.CHAIN_APPROX_SIMPLE)
 	cnts = imutils.grab_contours(cnts)
 
-	# check to see if any contours were found
+	# Jeśli znaleziono jakiekolwiek kontury
 	if len(cnts) > 0:
-		# sort the contours and find the largest one -- we
-		# will assume this contour correspondes to the area
-		# of my phone
+		# Sortowanie konturów według pola powierzchni i wybór największego
+		# Zakładamy, że największy obiekt o danym kolorze jest obiektem, który chcemy śledzić
 		cnt = sorted(cnts, key = cv2.contourArea, reverse = True)[0]
 
-		# compute the (rotated) bounding box around then
-		# contour and then draw it		
+		# Obliczanie obróconego prostokąta ograniczającego (bounding box) wokół największego konturu
 		rect = np.int32(cv2.boxPoints(cv2.minAreaRect(cnt)))
+		
+		# Rysowanie konturu (prostokąta) na oryginalnej klatce wideo (kolor zielony, grubość 2)
 		cv2.drawContours(frame, [rect], -1, (0, 255, 0), 2)
 
-	# show the frame and the binary image
+	# Wyświetlanie oryginalnej klatki z nałożonym śledzeniem oraz maski binarnej
 	cv2.imshow("Tracking", frame)
 	cv2.imshow("Binary", blue)
 
-	# if your machine is fast, it may display the frames in
-	# what appears to be 'fast forward' since more than 32
-	# frames per second are being displayed -- a simple hack
-	# is just to sleep for a tiny bit in between frames;
-	# however, if your computer is slow, you probably want to
-	# comment out this line
+	# Krótka pauza (ok. 25ms), aby wideo nie odtwarzało się zbyt szybko
+	# Można dostosować w zależności od wydajności komputera
 	time.sleep(0.025)
 
-	# if the 'q' key is pressed, stop the loop
+	# Jeśli naciśnięto klawisz 'q', przerywamy pętlę i kończymy program
 	if cv2.waitKey(1) & 0xFF == ord("q"):
 		break
 
-# cleanup the camera and close any open windows
+# Zwolnienie zasobów kamery/wideo i zamknięcie wszystkich okien
 camera.release()
 cv2.destroyAllWindows()
