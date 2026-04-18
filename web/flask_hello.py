@@ -15,6 +15,7 @@ def hello():
     # Zwrócenie prostego tekstu jako odpowiedzi HTTP
     return "Hello World!"
 
+
 # Dodatkowy endpoint "/hi"
 @app.route("/hi")
 def hi():

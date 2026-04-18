@@ -1,12 +1,10 @@
 import argparse
 import cv2 as cv
 import numpy as np
-from matplotlib import pyplot as plt
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", required=True,
-                help="path to input image")
+ap.add_argument("-i", "--image", required=True, help="path to input image")
 args = vars(ap.parse_args())
 
 img = cv.imread(args["image"], cv.IMREAD_GRAYSCALE)
@@ -28,7 +26,7 @@ thresh = -1
 for i in range(1, 256):
     p1, p2 = np.hsplit(hist_norm, [i])  # probabilities
     q1, q2 = Q[i], Q[255] - Q[i]  # cum sum of classes
-    if q1 < 1.e-6 or q2 < 1.e-6:
+    if q1 < 1.0e-6 or q2 < 1.0e-6:
         continue
     b1, b2 = np.hsplit(bins, [i])  # weights
 

@@ -19,7 +19,9 @@ def scaleImage(*args):
     print(f"{args[0]=}")
     scaleFactor = 1 + args[0] / 100.0
     # Resize the image
-    scaledImage = cv2.resize(image, None, fx=scaleFactor, fy=scaleFactor, interpolation=cv2.INTER_LINEAR)
+    scaledImage = cv2.resize(
+        image, None, fx=scaleFactor, fy=scaleFactor, interpolation=cv2.INTER_LINEAR
+    )
     cv2.imshow(windowName, scaledImage)
 
 

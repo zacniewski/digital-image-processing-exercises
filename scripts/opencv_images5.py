@@ -1,5 +1,6 @@
 # Importowanie biblioteki OpenCV
 import cv2
+
 # Importowanie biblioteki NumPy do tworzenia i operacji na macierzach
 import numpy as np
 
@@ -11,7 +12,7 @@ cv2.rectangle(rectangle, (25, 25), (275, 275), 255, -1)
 cv2.imshow("Rectangle", rectangle)
 
 # Utworzenie obrazu (300x300) w odcieniach szarości dla koła
-circle = np.zeros((300, 300), dtype = "uint8")
+circle = np.zeros((300, 300), dtype="uint8")
 # Narysowanie białego koła o środku (150,150) i promieniu 150, wypełnionego (grubość -1)
 cv2.circle(circle, (150, 150), 150, 255, -1)
 # Wyświetlenie obrazu z kołem

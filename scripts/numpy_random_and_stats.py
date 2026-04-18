@@ -29,7 +29,7 @@ print(f"Suma w kolumnach (axis=0): {matrix.sum(axis=0)}")
 print(f"Suma w wierszach (axis=1): {matrix.sum(axis=1)}")
 
 # 4. FUNKCJE MATEMATYCZNE (Universal Functions)
-angles = np.array([0, np.pi/2, np.pi])
+angles = np.array([0, np.pi / 2, np.pi])
 print(f"\nKąty (radiany): {angles}")
 print(f"Sinus: {np.sin(angles)}")
 print(f"Eksponenta (e^x): {np.exp([1, 2, 3])}")

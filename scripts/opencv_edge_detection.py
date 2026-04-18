@@ -3,15 +3,14 @@ import cv2
 
 # Konfiguracja parsera argumentów wiersza poleceń
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", required=True,
-                help="ścieżka do obrazu wejściowego")
+ap.add_argument("-i", "--image", required=True, help="ścieżka do obrazu wejściowego")
 args = vars(ap.parse_args())
 
 # Wczytanie obrazu z dysku
 img = cv2.imread(args["image"])
 
 # Wyświetlenie oryginalnego obrazu
-cv2.imshow('Original', img)
+cv2.imshow("Original", img)
 cv2.waitKey(0)
 
 # Konwersja obrazu na skalę szarości
@@ -31,11 +30,11 @@ sobely = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=0, dy=1, ksize=5)
 sobelxy = cv2.Sobel(src=img_blur, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5)
 
 # Wyświetlenie wyników detekcji Sobel
-cv2.imshow('Sobel X', sobelx)
+cv2.imshow("Sobel X", sobelx)
 cv2.waitKey(0)
-cv2.imshow('Sobel Y', sobely)
+cv2.imshow("Sobel Y", sobely)
 cv2.waitKey(0)
-cv2.imshow('Sobel X Y using Sobel() function', sobelxy)
+cv2.imshow("Sobel X Y using Sobel() function", sobelxy)
 cv2.waitKey(0)
 
 # --- Detekcja krawędzi Canny ---
@@ -44,7 +43,7 @@ cv2.waitKey(0)
 edges = cv2.Canny(image=img_blur, threshold1=120, threshold2=220)
 
 # Wyświetlenie wyniku algorytmu Canny
-cv2.imshow('Canny Edge Detection', edges)
+cv2.imshow("Canny Edge Detection", edges)
 cv2.waitKey(0)
 
 # Zamknięcie wszystkich okien GUI

@@ -12,11 +12,7 @@ data[data < 10] = 0
 print(f"Dane po wyzerowaniu elementów < 10: {data}")
 
 # 2. SLICING W MACIERZACH WIELOWYMIAROWYCH
-matrix = np.array([
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12]
-])
+matrix = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 
 print(f"\nMacierz:\n{matrix}")
 print(f"Pierwsze dwa wiersze:\n{matrix[:2, :]}")

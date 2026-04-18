@@ -10,6 +10,7 @@ class Animal:
     def make_sound(self, sound):
         return f"{self.name} ({self.species}) wydaje dźwięk: {sound}"
 
+
 # Dziedziczenie
 class Dog(Animal):
     def __init__(self, name, breed):
@@ -20,10 +21,12 @@ class Dog(Animal):
     def make_sound(self, sound="Hau!"):
         return super().make_sound(sound)
 
+
 # Tworzenie obiektów
 my_dog = Dog("Burek", "Labrador")
 print(my_dog.make_sound())
 print(f"Rasa: {my_dog.breed}")
+
 
 # 2. OBSŁUGA WYJĄTKÓW (Exception Handling)
 def divide_numbers(a, b):
@@ -38,6 +41,7 @@ def divide_numbers(a, b):
     finally:
         print("Wykonano próbę dzielenia.")
 
+
 print(divide_numbers(10, 2))
 print(divide_numbers(10, 0))
 print(divide_numbers(10, "a"))
@@ -46,7 +50,7 @@ print(divide_numbers(10, "a"))
 try:
     with open("test_file.txt", "w") as f:
         f.write("To jest plik testowy.\nPython jest super!")
-    
+
     with open("test_file.txt", "r") as f:
         print(f"\nZawartość pliku:\n{f.read()}")
 except Exception as e:

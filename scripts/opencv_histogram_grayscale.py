@@ -8,8 +8,7 @@ import cv2
 
 # Konfiguracja parsera argumentów i ich sparsowanie
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", required = True,
-	help = "ścieżka do obrazu")
+ap.add_argument("-i", "--image", required=True, help="ścieżka do obrazu")
 args = vars(ap.parse_args())
 
 # Wczytanie obrazu, konwersja do skali szarości i podgląd

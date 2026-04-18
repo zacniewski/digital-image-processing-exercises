@@ -15,6 +15,7 @@ place = False
 drop = False
 switch = False
 held_piece = ""
+current_piece = ""
 flag = 0
 score = 0
 
@@ -65,17 +66,33 @@ def display(board, coords, color, next_info, held_info, score, SPEED):
     dummy = np.concatenate((border, left, border, dummy, border, right, border), 1)
     dummy = np.concatenate((border_, dummy, border_), 0)
     dummy = dummy.repeat(20, 0).repeat(20, 1)
-    dummy = cv2.putText(dummy, str(score), (520, 200), cv2.FONT_HERSHEY_DUPLEX, 1, [0, 0, 255], 2)
+    dummy = cv2.putText(
+        dummy, str(score), (520, 200), cv2.FONT_HERSHEY_DUPLEX, 1, [0, 0, 255], 2
+    )
 
     # Instructions for the player
 
-    dummy = cv2.putText(dummy, "A - move left", (45, 200), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
-    dummy = cv2.putText(dummy, "D - move right", (45, 225), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
-    dummy = cv2.putText(dummy, "S - move down", (45, 250), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
-    dummy = cv2.putText(dummy, "W - hard drop", (45, 275), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
-    dummy = cv2.putText(dummy, "J - rotate left", (45, 300), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
-    dummy = cv2.putText(dummy, "L - rotate right", (45, 325), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
-    dummy = cv2.putText(dummy, "I - hold", (45, 350), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255])
+    dummy = cv2.putText(
+        dummy, "A - move left", (45, 200), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
+    dummy = cv2.putText(
+        dummy, "D - move right", (45, 225), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
+    dummy = cv2.putText(
+        dummy, "S - move down", (45, 250), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
+    dummy = cv2.putText(
+        dummy, "W - hard drop", (45, 275), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
+    dummy = cv2.putText(
+        dummy, "J - rotate left", (45, 300), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
+    dummy = cv2.putText(
+        dummy, "L - rotate right", (45, 325), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
+    dummy = cv2.putText(
+        dummy, "I - hold", (45, 350), cv2.FONT_HERSHEY_DUPLEX, 0.6, [0, 0, 255]
+    )
 
     cv2.imshow("Tetris", dummy)
     key = cv2.waitKey(int(1000 / SPEED))
@@ -139,15 +156,29 @@ if __name__ == "__main__":
 
                 if current_piece != "I" and current_piece != "O":
                     if coords[1, 1] > 0 and coords[1, 1] < 9:
-                        arr = coords[1] - 1 + np.array([[[x, y] for y in range(3)] for x in range(3)])
+                        arr = (
+                            coords[1]
+                            - 1
+                            + np.array([[[x, y] for y in range(3)] for x in range(3)])
+                        )
                         pov = coords - coords[1] + 1
 
                 elif current_piece == "I":
                     # The straight piece has a 4x4 array, so it needs seperate code
 
-                    arr = top_left + np.array([[[x, y] for y in range(4)] for x in range(4)])
+                    arr = top_left + np.array(
+                        [[[x, y] for y in range(4)] for x in range(4)]
+                    )
                     pov = np.array(
-                        [np.where(np.logical_and(arr[:, :, 0] == pos[0], arr[:, :, 1] == pos[1])) for pos in coords])
+                        [
+                            np.where(
+                                np.logical_and(
+                                    arr[:, :, 0] == pos[0], arr[:, :, 1] == pos[1]
+                                )
+                            )
+                            for pos in coords
+                        ]
+                    )
                     pov = np.array([k[0] for k in np.swapaxes(pov, 1, 2)])
 
                 # Rotates the array and repositions the piece to where it is now
@@ -178,7 +209,10 @@ if __name__ == "__main__":
             # Checks if the piece is overlapping with other pieces or if it's outside the board, and if so, changes the position to the position before anything happened
 
             if np.max(coords[:, 0]) < 20 and np.min(coords[:, 0]) >= 0:
-                if not (current_piece == "I" and (np.max(coords[:, 1]) >= 10 or np.min(coords[:, 1]) < 0)):
+                if not (
+                    current_piece == "I"
+                    and (np.max(coords[:, 1]) >= 10 or np.min(coords[:, 1]) < 0)
+                ):
                     if not np.all(board[coords[:, 0], coords[:, 1]] == 0):
                         coords = dummy.copy()
                 else:
@@ -246,7 +280,7 @@ if __name__ == "__main__":
         for line in range(20):
             if np.all([np.any(pos != 0) for pos in board[line]]):
                 lines += 1
-                board[1:line + 1] = board[:line]
+                board[1 : line + 1] = board[:line]
 
         if lines == 1:
             score += 40

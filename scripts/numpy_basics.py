@@ -20,5 +20,3 @@ print(f"Iloczyn macierzy to:\n {macierz * macierz2}")
 
 print(f"Zerowa macierzy:\n {np.zeros((5, 6))}")
 print(f"Macierz z nowymi wymiarami:\n {macierz2.reshape((1, 9))}")
-
-

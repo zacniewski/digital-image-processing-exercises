@@ -8,8 +8,7 @@ import cv2
 
 # Konfiguracja parsera argumentów
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", required = True,
-	help = "ścieżka do obrazu wejściowego")
+ap.add_argument("-i", "--image", required=True, help="ścieżka do obrazu wejściowego")
 args = vars(ap.parse_args())
 
 # Wczytanie obrazu i konwersja na skalę szarości (equalizacja histogramu działa na jednym kanale)

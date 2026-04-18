@@ -7,8 +7,9 @@ import cv2
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, default="adrian.png",
-	help="path to the input image")
+ap.add_argument(
+    "-i", "--image", type=str, default="adrian.png", help="path to the input image"
+)
 args = vars(ap.parse_args())
 
 # load the input image from disk

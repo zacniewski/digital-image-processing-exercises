@@ -4,6 +4,7 @@ def suma(a, b=5):
     """Zwraca sumę dwóch liczb."""
     return a + b
 
+
 # Definicja zmiennych testowych
 c = 5
 d = 34

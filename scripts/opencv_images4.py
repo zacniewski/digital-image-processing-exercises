@@ -1,15 +1,16 @@
 # Importowanie biblioteki argparse do obsługi argumentów wiersza poleceń
 import argparse
+
 # Importowanie biblioteki OpenCV do przetwarzania obrazów
 import cv2
+
 # Importowanie biblioteki numpy do operacji na macierzach
 import numpy as np
 
 # Inicjalizacja parsera argumentów
 ap = argparse.ArgumentParser()
 # Dodanie argumentu --image (lub -i), określającego ścieżkę do obrazu wejściowego
-ap.add_argument("-i", "--image", required=True,
-                help="path to input image")
+ap.add_argument("-i", "--image", required=True, help="path to input image")
 # Parsowanie argumentów i konwersja na słownik
 args = vars(ap.parse_args())
 

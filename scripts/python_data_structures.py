@@ -18,11 +18,7 @@ print(f"Współrzędne: {coordinates}")
 # coordinates[0] = 5.0  # To spowodowałoby błąd
 
 # 3. SŁOWNIKI (Dictionaries) - pary klucz-wartość, nieuporządkowane (do Pythona 3.7)
-person = {
-    "name": "Jan",
-    "age": 30,
-    "city": "Warszawa"
-}
+person = {"name": "Jan", "age": 30, "city": "Warszawa"}
 person["job"] = "Programista"
 print(f"Słownik osoby: {person}")
 print(f"Imię: {person.get('name')}")
