@@ -34,8 +34,58 @@ Zbiór ćwiczeń z przetwarzania obrazów w Pythonie z wykorzystaniem bibliotek 
 
 ## Wymagania i instalacja
 - Python 3.12+
-- Pakiety z `requirements.txt`:
-  - opencv-python, numpy, matplotlib, pillow, itp.
+
+### Środowisko wirtualne (venv)
+Zaleca się pracę w środowisku wirtualnym, aby uniknąć konfliktów między projektami.
+
+**Tworzenie środowiska:**
+```bash
+python -m venv my_env
+```
+
+**Aktywacja środowiska:**
+- **Windows (PowerShell):**
+  ```powershell
+  .\my_env\Scripts\Activate.ps1
+  ```
+- **Windows (CMD):**
+  ```cmd
+  .\my_env\Scripts\activate.bat
+  ```
+- **Linux / macOS:**
+  ```bash
+  source my_env/bin/activate
+  ```
+
+**Dezaktywacja:**
+```bash
+deactivate
+```
+
+### Zarządzanie pakietami (pip)
+Podstawowe komendy do pracy z menedżerem pakietów:
+
+- **Instalacja wszystkich wymagań:**
+  ```bash
+  pip install -r requirements.txt
+  ```
+- **Instalacja konkretnego pakietu:**
+  ```bash
+  pip install nazwa_pakietu
+  ```
+- **Odinstalowanie pakietu:**
+  ```bash
+  pip uninstall nazwa_pakietu
+  ```
+- **Lista zainstalowanych pakietów:**
+  ```bash
+  pip list
+  ```
+- **Generowanie pliku wymagań:**
+  ```bash
+  pip freeze > requirements.txt
+  ```
+
 - Uwaga: część skryptów używa biblioteki `flask` (aplikacje webowe) oraz `imutils` (proste transformaty). Jeśli ich brakuje, zainstaluj:
 
 ```bash
@@ -47,59 +97,81 @@ pip install -r requirements.txt
 - Większość skryptów przyjmuje parametr `--image` ze ścieżką do pliku, np.:
 
 ```bash
-python scripts/images1.py --image obrazki/obrazek.jpg
+python scripts/opencv_images1.py --image obrazki/obrazek.jpg
 ```
 
 - Aplikacje webowe (Flask):
 
 ```bash
-python web/hello.py
-python web/hello_opencv.py
+python web/flask_hello.py
+python web/flask_hello_opencv.py
 ```
 
 Następnie odwiedź odpowiednie endpointy, np. `/canny?url=...` (zob. `web/links.md`).
 
 ## Przegląd skryptów
 ### Podstawy pracy z obrazami
-- `scripts/images1.py` – odczyt pikseli, modyfikacja fragmentów, dzielenie obrazu na ćwiartki.
-- `scripts/images2.py` – przesunięcie, rotacja (z i bez kadrowania), skalowanie, odbicia lustrzane.
-- `scripts/images3.py` – kadrowanie (crop) wokół środka obrazu.
-- `scripts/images4.py` – operacje arytmetyczne: rozjaśnianie i przyciemnianie.
-- `scripts/images5.py` – operacje logiczne: AND, OR, XOR, NOT na maskach.
-- `scripts/images6.py` – dodatkowe przykłady operacji na obrazach (jeśli występują).
+- `scripts/opencv_images1.py` – odczyt pikseli, modyfikacja fragmentów, dzielenie obrazu na ćwiartki.
+- `scripts/opencv_images2.py` – przesunięcie, rotacja (z i bez kadrowania), skalowanie, odbicia lustrzane.
+- `scripts/opencv_images3.py` – kadrowanie (crop) wokół środka obrazu.
+- `scripts/opencv_images4.py` – operacje arytmetyczne: rozjaśnianie i przyciemnianie.
+- `scripts/opencv_images5.py` – operacje logiczne: AND, OR, XOR, NOT na maskach.
+- `scripts/opencv_images6.py` – dodatkowe przykłady operacji na obrazach (jeśli występują).
 
 ### Transformacje geometryczne
-- `scripts/image_drawing.py`, `scripts/rysowanie.py` – rysowanie prymitywów i tekstu.
-- `scripts/mouse_and_trackbar_gui.py` – GUI: obsługa myszy i suwaków.
+- `scripts/opencv_image_drawing.py`, `scripts/opencv_rysowanie.py` – rysowanie prymitywów i tekstu.
+- `scripts/opencv_mouse_and_trackbar_gui.py` – GUI: obsługa myszy i suwaków.
 
 ### Operacje arytmetyczne i logiczne
-- `scripts/images4.py`, `scripts/images5.py` – suma/różnica, operacje bitowe na maskach.
+- `scripts/opencv_images4.py`, `scripts/opencv_images5.py` – suma/różnica, operacje bitowe na maskach.
 
 ### Histogramy i equalizacja
-- `scripts/histogram_grayscale.py`, `scripts/histograms_color.py`, `scripts/histogram_equalize.py` – generowanie histogramów, equalizacja, CLAHE.
+- `scripts/opencv_histogram_grayscale.py`, `scripts/opencv_histograms_color.py`, `scripts/opencv_histogram_equalize.py` – generowanie histogramów, equalizacja, CLAHE.
 
 ### Progowanie (thresholding)
-- `scripts/thresholding.py`, `scripts/thresholding2.py`, `scripts/thresholding3.py`, `scripts/thresholding4.py`, `scripts/thresholding5.py` – progowanie globalne, Otsu, adaptacyjne i warianty flag.
+- `scripts/opencv_thresholding.py`, `scripts/opencv_thresholding2.py`, `scripts/opencv_thresholding3.py`, `scripts/opencv_thresholding4.py`, `scripts/opencv_thresholding5.py` – progowanie globalne, Otsu, adaptacyjne i warianty flag.
 
 ### Operacje morfologiczne
-- `scripts/morphological_ops.py`, `scripts/morphological_hats.py` – erozja, dylatacja, otwarcie, domknięcie, top-hat, black-hat.
+- `scripts/opencv_morphological_ops.py`, `scripts/opencv_morphological_hats.py` – erozja, dylatacja, otwarcie, domknięcie, top-hat, black-hat.
 
 ### Krawędzie i kontury
-- `scripts/edge_detection.py`, `scripts/contour_detection.py`, `scripts/canny_tracker.py` – filtry gradientowe, Canny, wykrywanie konturów i ich analiza.
+- `scripts/opencv_edge_detection.py`, `scripts/opencv_contour_detection.py`, `scripts/opencv_canny_tracker.py` – filtry gradientowe, Canny, wykrywanie konturów i ich analiza.
 
 ### Wideo: odczyt, zapis, właściwości
-- `scripts/video1_capture_properties.py`, `scripts/video2_reading_from_file.py`, `scripts/video3_writing_from_camera.py`, `scripts/video_from_image.py` – praca z kamerą/plikiem, zapis i generowanie wideo.
+- `scripts/opencv_video1_capture_properties.py`, `scripts/opencv_video2_reading_from_file.py`, `scripts/opencv_video3_writing_from_camera.py`, `scripts/opencv_video_from_image.py` – praca z kamerą/plikiem, zapis i generowanie wideo.
 
 ### Detekcja obiektów i twarzy
-- `scripts/detect_faces.py`, `scripts/color_tracking.py`, `scripts/text_recognition.py` – detekcja twarzy (Haar), śledzenie koloru, OCR (jeśli skonfigurowany backend).
+- `scripts/opencv_detect_faces.py`, `scripts/opencv_color_tracking.py`, `scripts/opencv_text_recognition.py` – detekcja twarzy (Haar), śledzenie koloru, OCR (jeśli skonfigurowany backend).
 
 ### Aplikacje webowe (Flask + OpenCV)
-- `web/hello.py` – minimalny Hello World we Flask.
-- `web/hello_opencv.py` – proste API obrazowe: Canny, blur, threshold adaptacyjny.
+- `web/flask_hello.py` – minimalny Hello World we Flask.
+- `web/flask_hello_opencv.py` – proste API obrazowe: Canny, blur, threshold adaptacyjny.
 
 ### Inne narzędzia i przykłady
-- `scripts/check_cv_version.py` – wypisanie wersji OpenCV.
-- `scripts/functions_import.py`, `scripts/functions_usage.py`, `scripts/numpy_basics.py`, `scripts/loops.py`, `scripts/opencv_tetris.py` – drobne przykłady i demonstratory składni/operacji.
+- `scripts/opencv_check_cv_version.py` – wypisanie wersji OpenCV.
+- `scripts/python_functions_usage.py`, `scripts/python_data_structures.py`, `scripts/python_oop_and_exceptions.py`, `scripts/numpy_basics.py`, `scripts/numpy_indexing_and_broadcasting.py`, `scripts/numpy_random_and_stats.py`, `scripts/python_loops.py`, `scripts/opencv_tetris_game.py` – drobne przykłady i demonstratory składni/operacji.
+
+### Podstawowe elementy Pythona
+Struktura typów i pojęć:
+
+```mermaid
+graph TD
+    Python[Python Basics] --> DS[Data Structures]
+    Python --> Func[Functions & Modules]
+    Python --> OOP[Object Oriented Programming]
+    
+    DS --> Lists[Lists & List Comprehensions]
+    DS --> Tuples[Tuples - immutable]
+    DS --> Dicts[Dictionaries - Key-Value]
+    DS --> Sets[Sets - unique elements]
+    
+    Func --> Args[Arguments & Defaults]
+    Func --> Returns[Return values]
+    
+    OOP --> Classes[Classes & Objects]
+    OOP --> Inheritance[Inheritance]
+    OOP --> Exceptions[Exception Handling - try/except]
+```
 
 ## Teoria: wybrane algorytmy
 ### Reprezentacja obrazu i przestrzenie barw
