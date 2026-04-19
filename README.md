@@ -1,4 +1,4 @@
-# Digital-Image-Processing
+# Digital Image Processing exercises (Polish version)
 
 ## Spis treści
 
