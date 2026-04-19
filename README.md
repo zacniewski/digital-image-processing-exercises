@@ -2,6 +2,8 @@
 
 ## Spis treści
 
+- [Sugerowana kolejność nauki](#sugerowana-kolejno%C5%9B%C4%87-nauki)
+- [Wykłady (Teoria i Przykłady)](#wyk%C5%82ady-teoria-i-przyk%C5%82ady)
 - [Opis projektu](#opis-projektu)
 - [Wymagania i instalacja](#wymagania-i-instalacja)
 - [Uruchamianie wybranych skryptów](#uruchamianie-wybranych-skrypt%C3%B3w)
@@ -29,6 +31,63 @@
   - [Kontury i momenty geometryczne](#kontury-i-momenty-geometryczne)
   - [Detektory obiektów: Haar Cascades](#detektory-obiekt%C3%B3w-haar-cascades)
 - [Licencja](#licencja)
+
+## Sugerowana kolejność nauki
+
+Dla studentów zaczynających przygodę z Pythonem i przetwarzaniem obrazów, zaleca się uruchamianie skryptów w następującej kolejności:
+
+### 1. Podstawy Pythona
+
+Zrozumienie składni i struktur danych jest niezbędne przed pracą z obrazami.
+
+- `scripts/python_data_structures.py` – listy, słowniki, krotki.
+- `scripts/python_loops.py` – pętle for i while.
+- `scripts/python_functions_usage.py` – definiowanie i używanie funkcji.
+- `scripts/python_oop_and_exceptions.py` – programowanie obiektowe i obsługa błędów.
+
+### 2. Fundamenty NumPy
+
+Obrazy w OpenCV to macierze NumPy. Te skrypty nauczą Cię jak nimi manipulować.
+
+- `scripts/numpy_basics.py` – tworzenie tablic, typy danych.
+- `scripts/numpy_indexing_and_broadcasting.py` – wycinanie (slicing) i operacje na macierzach.
+- `scripts/numpy_random_and_stats.py` – generowanie danych i podstawowe statystyki.
+
+### 3. Wprowadzenie do OpenCV
+
+Pierwsze kroki w pracy z plikami graficznymi.
+
+- `scripts/opencv_check_cv_version.py` – sprawdzenie instalacji.
+- `scripts/opencv_images1.py` – wczytywanie, wyświetlanie i dostęp do pikseli.
+- `scripts/opencv_images2.py` – podstawowe transformacje (rotacja, skalowanie).
+- `scripts/opencv_rysowanie.py` – rysowanie kształtów na obrazach.
+
+### 4. Przetwarzanie Obrazów (Poziom Średni)
+
+Kluczowe techniki poprawy jakości i ekstrakcji cech.
+
+- `scripts/opencv_thresholding.py` – binaryzacja obrazu.
+- `scripts/opencv_histogram_grayscale.py` – analiza rozkładu jasności.
+- `scripts/opencv_morphological_ops.py` – usuwanie szumów (erozja, dylatacja).
+- `scripts/opencv_edge_detection.py` – wykrywanie krawędzi (Canny, Sobel).
+
+### 5. Zaawansowane Tematy i Wideo
+
+- `scripts/opencv_video1_capture_properties.py` – praca z kamerą.
+- `scripts/opencv_detect_faces.py` – wykorzystanie kaskad Haara do detekcji twarzy.
+- `web/flask_hello_opencv.py` – serwowanie wyników przetwarzania przez przeglądarkę.
+
+______________________________________________________________________
+
+## Wykłady (Teoria i Przykłady)
+
+Zapraszam do zapoznania się z materiałami wykładowymi, które szczegółowo omawiają podstawy przetwarzania obrazów:
+
+1. [Wykład 1: Podstawy Reprezentacji Obrazu](lectures/01_introduction.md) (RGB, Gray, Binarny, NumPy)
+1. [Wykład 2: Progowanie (Thresholding)](lectures/02_thresholding.md) (Globalne, Adaptacyjne, Otsu)
+1. [Wykład 3: Filtrowanie - Blurowanie i Wyostrzanie](lectures/03_filtering_and_blurring.md) (Gaussian, Median, Kernels)
+1. [Wykład 4: Histogramy i Equalizacja](lectures/04_histograms.md) (calcHist, CLAHE)
+1. [Wykład 5: Morfologia i Detekcja Krawędzi](lectures/05_morphology_and_edges.md) (Erozja, Dylatacja, Canny, Sobel)
 
 ## Opis projektu
 
