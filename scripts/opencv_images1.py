@@ -31,11 +31,13 @@ print(f"Wartości składowych kolorów: R - {r}, G - {g}, B - {b}")
 
 # Ustawienie fragmentu obrazu (od 0 do 200 piksela w pionie i poziomie) na kolor czerwony
 # Wartości w krotce to (Blue, Green, Red). Tutaj ustawiamy (0, 0, 255) co odpowiada czystemu kolorowi czerwonemu.
-image[0:200, 0:200] = (0, 0, 255)
+image[0:200, 0:200] = (123, 255, 45)
 
 # Obliczenie współrzędnych środka obrazu (dzielenie całkowite przez 2)
 cX = w // 2
 cY = h // 2
+print(f"{cY=}")
+
 # Wyświetlenie współrzędnych środka obrazu w konsoli
 print(f"Współrzędne środka to: ({cX}, {cY})")
 
@@ -63,4 +65,4 @@ cv2.imshow("Bottom-Left Corner", bl)
 cv2.waitKey(0)
 
 # Zapisanie zmodyfikowanego obrazu do pliku w folderze ../obrazki/
-cv2.imwrite("../obrazki/obrazek.png", image)
+cv2.imwrite("obrazek.png", image)

@@ -2,8 +2,7 @@
 # Przykład podstawowych struktur danych w Pythonie
 
 # 1. LISTY (Lists) - uporządkowane, modyfikowalne, pozwalają na duplikaty
-fruits = ["jabłko", "banan", "wiśnia"]
-fruits.append("pomarańcza")
+fruits = ["jabłko", "banan", "wiśnia", 1, ["hi", "hello"], "pomarańcza"]
 fruits[1] = "jagoda"
 print(f"Lista owoców: {fruits}")
 print(f"Drugi element: {fruits[1]}")
