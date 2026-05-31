@@ -75,7 +75,7 @@ Kluczowe techniki poprawy jakości i ekstrakcji cech.
 
 - `scripts/opencv_video1_capture_properties.py` – praca z kamerą.
 - `scripts/opencv_detect_faces.py` – wykorzystanie kaskad Haara do detekcji twarzy.
-- `web/flask_hello_opencv.py` – serwowanie wyników przetwarzania przez przeglądarkę.
+- `scipts/web/flask_hello_opencv.py` – serwowanie wyników przetwarzania przez przeglądarkę.
 
 ______________________________________________________________________
 
