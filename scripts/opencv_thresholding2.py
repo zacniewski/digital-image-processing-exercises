@@ -45,5 +45,5 @@ for i in range(6):
     plt.xticks([]), plt.yticks([])
 
 # Zapis gotowej siatki do pliku oraz pokazanie na ekranie
-plt.savefig("obrazki/threshold_matplotlib.png")
+plt.savefig("threshold_matplotlib.png")
 plt.show()

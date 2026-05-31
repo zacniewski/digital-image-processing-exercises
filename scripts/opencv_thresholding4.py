@@ -1,4 +1,6 @@
 import argparse
+
+import cv2
 import cv2 as cv
 from matplotlib import pyplot as plt
 
@@ -16,6 +18,7 @@ ret1, th1 = cv.threshold(img, 127, 255, cv.THRESH_BINARY)
 
 # Otsu's thresholding
 ret2, th2 = cv.threshold(img, 0, 255, cv.THRESH_BINARY + cv.THRESH_OTSU)
+cv2.imwrite("az.png", th2)
 
 # Otsu's thresholding after Gaussian filtering
 blur = cv.GaussianBlur(img, (5, 5), 0)
@@ -32,7 +35,7 @@ titles = [
     "Otsu's Thresholding",
     "Gaussian filtered Image",
     "Histogram",
-    "Otsu's Thresholding",
+    "Otsu's Thresholding after Gaussian filtering",
 ]
 
 for i in range(3):
@@ -43,5 +46,5 @@ for i in range(3):
     plt.subplot(3, 3, i * 3 + 3), plt.imshow(images[i * 3 + 2], "gray")
     plt.title(titles[i * 3 + 2]), plt.xticks([]), plt.yticks([])
 
-plt.savefig("obrazki/otsu-thresholding.png")
+plt.savefig("otsu-thresholding.png")
 plt.show()
