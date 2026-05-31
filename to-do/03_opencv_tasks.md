@@ -10,7 +10,7 @@
 
 ______________________________________________________________________
 
-Poniżej znajduje się 10 zadań dotyczących podstaw pracy z biblioteką OpenCV.
+Poniżej znajduje się 15 zadań dotyczących podstaw pracy z biblioteką OpenCV.
 
 1. **Wczytanie i wyświetlenie obrazu**
 
@@ -61,3 +61,28 @@ Poniżej znajduje się 10 zadań dotyczących podstaw pracy z biblioteką OpenCV
 
    - Zadanie: Stwórz okno z suwakiem (Trackbar), który będzie kontrolował jasność wyświetlanego obrazu.
    - Podpowiedź: Użyj `cv2.createTrackbar()` i funkcji zwrotnej (callback), która będzie aktualizować obraz.
+
+1. **Obrót obrazu (Rotation)**
+
+   - Zadanie: Obróć wczytany obraz o 45 stopni wokół jego środka.
+   - Podpowiedź: Użyj `cv2.getRotationMatrix2D()` do stworzenia macierzy rotacji, a następnie `cv2.warpAffine()`.
+
+1. **Rozmycie obrazu (Blur)**
+
+   - Zadanie: Zastosuj filtr rozmycia Gaussoa do obrazu, aby zredukować szumy.
+   - Podpowiedź: Użyj funkcji `cv2.GaussianBlur(img, (5, 5), 0)`.
+
+1. **Wykrywanie krawędzi (Canny)**
+
+   - Zadanie: Wykryj krawędzie na obrazie za pomocą algorytmu Canny.
+   - Podpowiedź: Użyj `cv2.Canny(img, threshold1, threshold2)`. Dobierz progi eksperymentalnie.
+
+1. **Rysowanie wielokąta**
+
+   - Zadanie: Narysuj na obrazie dowolny zamknięty wielokąt (np. trójkąt lub romb).
+   - Podpowiedź: Zdefiniuj punkty jako tablicę NumPy typu `int32` i użyj `cv2.polylines()`.
+
+1. **Interaktywne zamykanie okna**
+
+   - Zadanie: Napisz skrypt, który wyświetla obraz i zamyka okno dopiero po naciśnięciu klawisza 'q'.
+   - Podpowiedź: W pętli `while` sprawdź warunek `if cv2.waitKey(1) & 0xFF == ord('q'): break`.
