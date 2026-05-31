@@ -6,6 +6,7 @@
 - Nazwa pliku musi zawierać **Twoje nazwisko** (np. `01_nazwisko.py`).
 - Umieszczamy komentarze dotyczące zastosowanego kodu.
 - Tam, gdzie zadanie generuje wynik wizualny, wykonaj **zrzut ekranu** i zapisz go jako plik obrazu.
+- Tam, gdzie nie da się zrobić zrzutu ekranu, wskazane jest wyświetlenie informacji (funkcja `print`) o zmiennej, macierzy, itp.
 - Po realizacji wszystkich zadań należy je wysłać (wraz ze zrzutami ekranu) na **maila prowadzącego**.
 - **Nie wysyłamy środowiska wirtualnego (`venv`)**.
 
