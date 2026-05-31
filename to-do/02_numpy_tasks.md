@@ -45,7 +45,7 @@ Poniżej znajduje się 15 zadań dotyczących podstaw biblioteki NumPy w kontek�
 
 1. **Progowanie ręczne (NumPy)**
 
-   - Zadanie: Masz macierz z losowymi wartościami od 0 do 255. Zamień wszystkie wartości powyżej 127 na 255, a resztę na 0.
+   - Zadanie: Masz macierz 10 x 10 z losowymi wartościami od 0 do 255. Zamień wszystkie wartości powyżej 127 na 255, a resztę na 0.
    - Podpowiedź: Użyj maskowania logicznego: `macierz[macierz > 127] = 255`.
 
 1. **Łączenie macierzy (Stacking)**
