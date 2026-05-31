@@ -43,6 +43,7 @@ Zrozumienie składni i struktur danych jest niezbędne przed pracą z obrazami.
 - `scripts/python_data_structures.py` – listy, słowniki, krotki.
 - `scripts/python_loops.py` – pętle for i while.
 - `scripts/python_functions_usage.py` – definiowanie i używanie funkcji.
+- `scripts/python_functions_import.py` – importowanie własnych funkcji i modułów.
 - `scripts/python_oop_and_exceptions.py` – programowanie obiektowe i obsługa błędów.
 
 ### 2. Fundamenty NumPy
@@ -59,23 +60,28 @@ Pierwsze kroki w pracy z plikami graficznymi.
 
 - `scripts/opencv_check_cv_version.py` – sprawdzenie instalacji.
 - `scripts/opencv_images1.py` – wczytywanie, wyświetlanie i dostęp do pikseli.
-- `scripts/opencv_images2.py` – podstawowe transformacje (rotacja, skalowanie).
-- `scripts/opencv_rysowanie.py` – rysowanie kształtów na obrazach.
+- `scripts/opencv_images2.py`, `scripts/opencv_images3.py`, `scripts/opencv_images4.py`, `scripts/opencv_images5.py`, `scripts/opencv_images6.py` – operacje na pikselach, kanały kolorów, ROI.
+- `scripts/opencv_rysowanie.py`, `scripts/opencv_image_drawing.py` – rysowanie kształtów i tekstu na obrazach.
+- `scripts/opencv_mouse_and_trackbar_gui.py` – interakcja z użytkownikiem (myszka i suwaki).
 
 ### 4. Przetwarzanie Obrazów (Poziom Średni)
 
 Kluczowe techniki poprawy jakości i ekstrakcji cech.
 
-- `scripts/opencv_thresholding.py` – binaryzacja obrazu.
-- `scripts/opencv_histogram_grayscale.py` – analiza rozkładu jasności.
-- `scripts/opencv_morphological_ops.py` – usuwanie szumów (erozja, dylatacja).
-- `scripts/opencv_edge_detection.py` – wykrywanie krawędzi (Canny, Sobel).
+- `scripts/opencv_thresholding.py`, `scripts/opencv_thresholding2.py`, `scripts/opencv_thresholding3.py`, `scripts/opencv_thresholding4.py`, `scripts/opencv_thresholding5.py` – różne techniki progowania.
+- `scripts/opencv_histogram_grayscale.py`, `scripts/opencv_histogram_equalize.py`, `scripts/opencv_histograms_color.py` – analiza i poprawa kontrastu obrazu.
+- `scripts/opencv_morphological_ops.py`, `scripts/opencv_morphological_hats.py` – operacje morfologiczne (top-hat, black-hat).
+- `scripts/opencv_edge_detection.py`, `scripts/opencv_canny_tracker.py` – wykrywanie krawędzi z interaktywnym doborem parametrów.
+- `scripts/opencv_contour_detection.py` – znajdowanie i rysowanie konturów obiektów.
 
 ### 5. Zaawansowane Tematy i Wideo
 
-- `scripts/opencv_video1_capture_properties.py` – praca z kamerą.
+- `scripts/opencv_video1_capture_properties.py` – praca z kamerą i właściwości wideo.
+- `scripts/opencv_video2_reading_from_file.py`, `scripts/opencv_video3_writing_from_camera.py`, `scripts/opencv_video_from_image.py` – odczyt, zapis i tworzenie plików wideo.
 - `scripts/opencv_detect_faces.py` – wykorzystanie kaskad Haara do detekcji twarzy.
-- `scipts/web/flask_hello_opencv.py` – serwowanie wyników przetwarzania przez przeglądarkę.
+- `scripts/opencv_color_tracking.py` – śledzenie obiektów na podstawie koloru.
+- `scripts/opencv_text_recognition.py`, `scripts/opencv_tetris_game.py` – bardziej złożone przykłady zastosowań.
+- `scripts/web/flask_hello.py`, `scripts/web/flask_hello_opencv.py` – serwowanie wyników przetwarzania przez przeglądarkę (Flask).
 
 ______________________________________________________________________
 
