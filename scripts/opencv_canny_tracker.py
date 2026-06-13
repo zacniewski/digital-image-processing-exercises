@@ -8,7 +8,7 @@ def nothing(x):
 
 
 # Wczytanie obrazu w skali szarości (parametr 0).
-img = cv2.imread("../obrazki/adrian.png", 0)
+img = cv2.imread("../obrazki/male/adrian.png", 0)
 
 # Tworzenie nazwanego okna GUI o nazwie 'canny'.
 cv2.namedWindow("canny")

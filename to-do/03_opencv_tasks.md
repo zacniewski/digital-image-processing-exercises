@@ -19,7 +19,7 @@ Poniżej znajduje się 15 zadań dotyczących podstaw pracy z biblioteką OpenCV
 
 1. **Zapisywanie obrazu**
 
-   - Zadanie: Wczytaj obraz, przekonwertuj go na skalę szarości i zapisz jako nowy plik `.jpg`.
+   - Zadanie: Wczytaj kolorowy obraz, przekonwertuj go na skalę szarości i zapisz jako nowy plik `.jpg`.
    - Podpowiedź: Do konwersji użyj `cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)`, a do zapisu `cv2.imwrite()`.
 
 1. **Pobieranie wartości piksela**
