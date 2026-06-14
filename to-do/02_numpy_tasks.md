@@ -9,6 +9,7 @@
 - Tam, gdzie nie da się zrobić zrzutu ekranu, wskazane jest wyświetlenie informacji (funkcja `print`) o zmiennej, macierzy, itp.
 - Po realizacji wszystkich zadań należy je wysłać (wraz ze zrzutami ekranu) na **maila prowadzącego**.
 - **Nie wysyłamy środowiska wirtualnego (`venv`)**.
+- Proszę pamiętać, że do zaliczenia przedmiotu konieczne jest m.in. wysłanie zadań ze wszystkich laboratoriów!
 
 ______________________________________________________________________
 

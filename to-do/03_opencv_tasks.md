@@ -5,8 +5,10 @@
 - Każde rozwiązanie musi być zapisane w **osobnym pliku Pythona**.
 - Nazwa pliku musi zawierać **Twoje nazwisko** (np. `01_nazwisko.py`).
 - Tam, gdzie zadanie generuje wynik wizualny, wykonaj **zrzut ekranu** i zapisz go jako plik obrazu.
+- W pozostałych przypadkach umieść rezultat działania w osobnym pliku tekstowym lub jako komentarz w pliku z rozwiązaniem.
 - Po realizacji wszystkich zadań należy je wysłać (wraz ze zrzutami ekranu) na **maila prowadzącego**.
 - **Nie wysyłamy środowiska wirtualnego (`venv`)**.
+- Proszę pamiętać, że do zaliczenia przedmiotu konieczne jest m.in. wysłanie zadań ze wszystkich laboratoriów!
 
 ______________________________________________________________________
 
@@ -25,7 +27,7 @@ Poniżej znajduje się 15 zadań dotyczących podstaw pracy z biblioteką OpenCV
 1. **Pobieranie wartości piksela**
 
    - Zadanie: Wczytaj obraz i wypisz w konsoli wartości kolorów (B, G, R) piksela znajdującego się w samym środku obrazu.
-   - Podpowiedź: Pobierz wysokość i szerokość z `img.shape`, a następnie odwołaj się do `img[y, x]`.
+   - Podpowiedź: Pobierz wysokość i szerokość z `img.shape`, oblicz współrzędne środka, a następnie odwołaj się do `img[y, x]`.
 
 1. **Rysowanie linii**
 
