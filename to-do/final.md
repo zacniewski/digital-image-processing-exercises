@@ -2,10 +2,10 @@
 
 ### Wytyczne:
 
-> 1 Można korzystać z dokumentacji online oraz zrealizowanych przez siebie wcześniejszych zadań!
-> 2\. Każde zadanie wykonujemy w osobnym pliku z rozszerzeniem `.py`.
-> 3\. Każdy program nazywamy w postaci `imie-nazwisko-nr_albumu-zadanie-1.py`, czyli np. `jan-kowalski-34567-zadanie-1.py`.
-> 4\. W każdym zadaniu należy wygenerować obraz (za pomocą metody `imwrite`) o nazwie `imie-nazwisko-nr_albumu-zadanie-1.jpg`.
+1. Można korzystać z dokumentacji online oraz zrealizowanych przez siebie wcześniejszych zadań!
+1. Każde zadanie wykonujemy w osobnym pliku z rozszerzeniem `.py`.
+1. Każdy program nazywamy w postaci `imie-nazwisko-nr_albumu-zadanie-1.py`, czyli np. `jan-kowalski-34567-zadanie-1.py`.
+1. W każdym zadaniu należy wygenerować obraz (za pomocą metody `imwrite`) o nazwie `imie-nazwisko-nr_albumu-zadanie-1.jpg`.
 
 ### Zadania:
 
