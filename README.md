@@ -94,6 +94,7 @@ Zapraszam do zapoznania się z materiałami wykładowymi, które szczegółowo o
 1. [Wykład 3: Filtrowanie - Blurowanie i Wyostrzanie](lectures/03_filtering_and_blurring.md) (Gaussian, Median, Kernels)
 1. [Wykład 4: Histogramy i Equalizacja](lectures/04_histograms.md) (calcHist, CLAHE)
 1. [Wykład 5: Morfologia i Detekcja Krawędzi](lectures/05_morphology_and_edges.md) (Erozja, Dylatacja, Canny, Sobel)
+1. [Wykład 6: Kontury i Detekcja Obiektów](lectures/06_contours_and_detection.md) (Kontury, Haar Cascade, Śledzenie kolorów)
 
 ## Opis projektu
 
