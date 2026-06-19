@@ -13,7 +13,7 @@
 
 ______________________________________________________________________
 
-Poniżej znajduje się 15 zadań dotyczących histogramów i equalizacji obrazów w OpenCV oraz 10 zadań z operacji morfologicznych.
+Poniżej znajduje się 8 zadań dotyczących histogramów i equalizacji obrazów w OpenCV oraz 7 zadań z operacji morfologicznych.
 
 1. **Histogram obrazu w skali szarości**
 
@@ -33,27 +33,11 @@ Poniżej znajduje się 15 zadań dotyczących histogramów i equalizacji obrazó
    - Podpowiedź: Użyj funkcji `cv2.equalizeHist()`. Do wyświetlenia obok siebie użyj `np.hstack()`.
    - Pomocne skrypty: `scripts/opencv_histogram_equalize.py`
 
-1. **Porównanie histogramów przed i po equalizacji**
-
-   - Zadanie: Dla obrazu w skali szarości wyświetl na jednym wykresie dwa histogramy: przed equalizacją i po equalizacji. Opisz osie i dodaj legendę.
-   - Podpowiedź: Wywołaj `cv2.calcHist()` dwukrotnie — raz dla oryginalnego obrazu, raz dla obrazu po `cv2.equalizeHist()`. Użyj `plt.legend()`.
-   - Pomocne skrypty: `scripts/opencv_histogram_equalize.py`, `scripts/opencv_histogram_grayscale.py`
-
 1. **CLAHE — adaptacyjna equalizacja histogramu**
 
    - Zadanie: Zastosuj metodę CLAHE (Contrast Limited Adaptive Histogram Equalization) na obrazie w skali szarości i porównaj wynik ze zwykłą equalizacją.
    - Podpowiedź: Utwórz obiekt CLAHE: `clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))`, a następnie wywołaj `clahe.apply(img)`.
    - Pomocne skrypty: `scripts/opencv_histogram_equalize.py`
-
-1. **Histogram z maską**
-
-   - Zadanie: Wczytaj obraz w skali szarości, utwórz maskę (np. prostokąt w centrum obrazu) i oblicz histogram tylko dla zamaskowanego obszaru.
-   - Podpowiedź: Utwórz maskę jako czarną macierz (`np.zeros`) i ustaw wybrany obszar na 255. Przekaż maskę jako trzeci argument `cv2.calcHist()`.
-
-1. **Normalizacja histogramu**
-
-   - Zadanie: Oblicz histogram obrazu w skali szarości, a następnie znormalizuj go tak, aby suma wszystkich wartości wynosiła 1 (histogram prawdopodobieństwa). Wyświetl wynik.
-   - Podpowiedź: Podziel wartości histogramu przez całkowitą liczbę pikseli: `hist / hist.sum()` lub użyj `cv2.normalize()`.
 
 1. **Skumulowany histogram (CDF)**
 
@@ -71,32 +55,10 @@ Poniżej znajduje się 15 zadań dotyczących histogramów i equalizacji obrazó
    - Podpowiedź: `hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)`, następnie `hsv[:,:,2] = cv2.equalizeHist(hsv[:,:,2])`.
    - Pomocne skrypty: `scripts/opencv_histogram_equalize.py`
 
-1. **Porównanie jasności dwóch obrazów**
-
-   - Zadanie: Wczytaj dwa różne obrazy w skali szarości i wyświetl ich histogramy na jednym wykresie. Na podstawie histogramów oceń, który obraz jest jaśniejszy.
-   - Podpowiedź: Oblicz średnią wartość pikseli (`img.mean()`) dla każdego obrazu i wyświetl ją w tytule wykresu.
-
 1. **Detekcja prześwietlenia i niedoświetlenia**
 
    - Zadanie: Napisz funkcję, która na podstawie histogramu obrazu w skali szarości ocenia, czy obraz jest prześwietlony (zbyt wiele pikseli o wartości bliskiej 255) lub niedoświetlony (zbyt wiele pikseli o wartości bliskiej 0).
    - Podpowiedź: Sprawdź, jaki procent pikseli ma wartość powyżej 240 (prześwietlenie) lub poniżej 15 (niedoświetlenie).
-
-1. **Histogram dla wybranego kanału koloru**
-
-   - Zadanie: Wczytaj kolorowy obraz i wyświetl histogram tylko dla kanału czerwonego (R). Znajdź wartość jasności, która występuje najczęściej (dominantę).
-   - Podpowiedź: Kanał czerwony w OpenCV to indeks 2: `img[:,:,2]`. Dominantę znajdziesz przez `np.argmax(hist)`.
-
-1. **Backprojection (rzutowanie wsteczne)**
-
-   - Zadanie: Korzystając z funkcji `cv2.calcBackProject()`, znajdź na obrazie obszary o podobnej kolorystyce do zadanego wzorca (np. wycinka obrazu).
-   - Podpowiedź: Oblicz histogram wzorca w przestrzeni HSV, a następnie użyj go jako modelu w `cv2.calcBackProject()`.
-   - Pomocne skrypty: `scripts/opencv_color_tracking.py`
-
-1. **Zapis wykresu histogramu do pliku**
-
-   - Zadanie: Oblicz histogram kolorowego obrazu dla wszystkich trzech kanałów i zapisz wykres jako plik graficzny `histogram.png` bez wyświetlania go na ekranie.
-   - Podpowiedź: Zamiast `plt.show()` użyj `plt.savefig("histogram.png")`. Pamiętaj o wywołaniu `plt.close()` po zapisaniu.
-   - Pomocne skrypty: `scripts/opencv_histograms_color.py`
 
 ______________________________________________________________________
 
@@ -112,12 +74,6 @@ ______________________________________________________________________
 
    - Zadanie: Wczytaj obraz w skali szarości, zbinaryzuj go progowaniem, a następnie zastosuj dylatację z jądrem 5×5. Wyświetl obraz przed i po operacji obok siebie.
    - Podpowiedź: Użyj `cv2.dilate(img, kernel, iterations=1)`. Porównaj efekt z erozją z poprzedniego zadania.
-   - Pomocne skrypty: `scripts/opencv_morphological_ops.py`
-
-1. **Wpływ liczby iteracji na erozję i dylatację**
-
-   - Zadanie: Zastosuj erozję i dylatację na tym samym obrazie binarnym, zmieniając liczbę iteracji (1, 2, 3). Wyświetl wszystkie wyniki w jednym oknie i opisz zaobserwowane różnice.
-   - Podpowiedź: Użyj pętli `for i in range(1, 4)` i wywołuj `cv2.erode()` / `cv2.dilate()` z parametrem `iterations=i`.
    - Pomocne skrypty: `scripts/opencv_morphological_ops.py`
 
 1. **Otwarcie morfologiczne (Opening)**
@@ -149,13 +105,3 @@ ______________________________________________________________________
    - Zadanie: Zastosuj erozję na tym samym obrazie binarnym, używając trzech różnych kształtów jądra: prostokątnego (`MORPH_RECT`), eliptycznego (`MORPH_ELLIPSE`) i krzyżowego (`MORPH_CROSS`). Porównaj wyniki.
    - Podpowiedź: `kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))`. Zmień typ jądra i porównaj efekty wizualnie.
    - Pomocne skrypty: `scripts/opencv_morphological_ops.py`
-
-1. **Usuwanie szumu metodą otwarcia**
-
-   - Zadanie: Wczytaj obraz z drobnym szumem (lub dodaj szum funkcją `cv2.randn()`). Zastosuj operację otwarcia, aby usunąć szum, a następnie domknięcia, aby wypełnić ewentualne dziury. Wyświetl kolejne etapy przetwarzania.
-   - Podpowiedź: Szum sól i pieprz możesz dodać ręcznie, losowo ustawiając piksele na 0 lub 255. Następnie zastosuj `MORPH_OPEN`, a potem `MORPH_CLOSE`.
-
-1. **Ekstrakcja szkieletu obiektu (Skeletonization)**
-
-   - Zadanie: Zaimplementuj uproszczoną skeletonizację obiektu binarnego przy użyciu wielokrotnej erozji i gradientu morfologicznego. Wyświetl szkielet nałożony na oryginalny obraz.
-   - Podpowiedź: W pętli wykonuj erozję obrazu, obliczaj otwarcie zerodowanego obrazu, a następnie odejmuj otwarcie od zerodowanego obrazu i dodawaj wynik do szkieletu: `skeleton = cv2.bitwise_or(skeleton, cv2.subtract(eroded, cv2.morphologyEx(eroded, cv2.MORPH_OPEN, kernel)))`. Powtarzaj, aż obraz stanie się pusty.
