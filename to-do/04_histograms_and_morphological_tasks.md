@@ -8,12 +8,12 @@
 - Tam, gdzie zadanie generuje wynik wizualny, wykonaj **zrzut ekranu** i zapisz go jako plik obrazu.
 - W pozostałych przypadkach umieść rezultat działania w osobnym pliku tekstowym lub jako komentarz w pliku z rozwiązaniem.
 - Po realizacji wszystkich zadań należy je wysłać (wraz ze zrzutami ekranu) na **maila prowadzącego**.
-- **Nie wysyłamy środowiska wirtualnego (`venv`)**.
+- **Nie wysyłamy środowiska wirtualnego (`.venv` lub `my_env` lub inna nazwa )**.
 - Proszę pamiętać, że do zaliczenia przedmiotu konieczne jest m.in. wysłanie zadań ze wszystkich laboratoriów!
 
 ______________________________________________________________________
 
-Poniżej znajduje się 8 zadań dotyczących histogramów i equalizacji obrazów w OpenCV oraz 7 zadań z operacji morfologicznych.
+Poniżej znajduje się 10 zadań dotyczących histogramów i equalizacji obrazów w OpenCV oraz 10 zadań z operacji morfologicznych.
 
 1. **Histogram obrazu w skali szarości**
 
@@ -60,6 +60,16 @@ Poniżej znajduje się 8 zadań dotyczących histogramów i equalizacji obrazów
    - Zadanie: Napisz funkcję, która na podstawie histogramu obrazu w skali szarości ocenia, czy obraz jest prześwietlony (zbyt wiele pikseli o wartości bliskiej 255) lub niedoświetlony (zbyt wiele pikseli o wartości bliskiej 0).
    - Podpowiedź: Sprawdź, jaki procent pikseli ma wartość powyżej 240 (prześwietlenie) lub poniżej 15 (niedoświetlenie).
 
+1. **Histogram z maską lub w obszarze ROI**
+
+   - Zadanie: Wczytaj obraz w skali szarości lub kolorowy, wybierz prostokątny obszar ROI albo maskę binarną, a następnie oblicz histogram tylko dla wskazanego fragmentu. Porównaj go z histogramem całego obrazu.
+   - Podpowiedź: W `cv2.calcHist()` jako trzeci argument przekaż maskę. Dla ROI możesz wyciąć fragment obrazu przez `img[y1:y2, x1:x2]`.
+
+1. **Dopasowanie histogramu do obrazu referencyjnego**
+
+   - Zadanie: Wczytaj dwa obrazy w skali szarości: źródłowy i referencyjny. Zaimplementuj dopasowanie histogramu obrazu źródłowego do histogramu obrazu referencyjnego na podstawie CDF.
+   - Podpowiedź: Oblicz histogramy, przekształć je do CDF, a potem zbuduj mapowanie intensywności pikseli ze źródła na wartości z obrazu referencyjnego.
+
 ______________________________________________________________________
 
 ## Operacje morfologiczne
@@ -105,3 +115,18 @@ ______________________________________________________________________
    - Zadanie: Zastosuj erozję na tym samym obrazie binarnym, używając trzech różnych kształtów jądra: prostokątnego (`MORPH_RECT`), eliptycznego (`MORPH_ELLIPSE`) i krzyżowego (`MORPH_CROSS`). Porównaj wyniki.
    - Podpowiedź: `kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))`. Zmień typ jądra i porównaj efekty wizualnie.
    - Pomocne skrypty: `scripts/opencv_morphological_ops.py`
+
+1. **Wpływ liczby iteracji operacji morfologicznej**
+
+   - Zadanie: Na tym samym obrazie binarnym zastosuj erozję i dylatację z różną liczbą iteracji, np. 1, 3 i 5. Porównaj, jak zmienia się wynik wraz ze wzrostem liczby iteracji.
+   - Podpowiedź: Użyj parametru `iterations` w `cv2.erode()` i `cv2.dilate()`.
+
+1. **Wypełnianie dziur w obiektach binarnych**
+
+   - Zadanie: Wczytaj binarny obraz zawierający obiekty z dziurami wewnętrznymi. Zastosuj operację, która wypełni te dziury i wyświetl wynik przed oraz po przetworzeniu.
+   - Podpowiedź: Możesz wykorzystać kombinację `floodFill()`, negacji obrazu i operacji morfologicznych albo domknięcie z odpowiednio dobranym jądrem.
+
+1. **Czyszczenie obrazu sekwencją opening i closing**
+
+   - Zadanie: Wczytaj binarny obraz z drobnym szumem i przerwami w obiektach. Najpierw zastosuj otwarcie, a potem domknięcie morfologiczne. Porównaj efekt z obrazem wyjściowym.
+   - Podpowiedź: Połącz `cv2.MORPH_OPEN` i `cv2.MORPH_CLOSE`, aby jednocześnie usuwać drobne zakłócenia i uzupełniać niewielkie luki.
