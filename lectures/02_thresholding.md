@@ -20,6 +20,23 @@ pixel_out = 0    jeśli pixel_in <= T
 - Przygotowanie obrazu do analizy konturów
 - Segmentacja komórek w obrazach medycznych
 
+### Jak wybrać próg?
+
+Najprościej spojrzeć na histogram:
+
+- dwa piki sugerują próg w dolinie między nimi,
+- nierówne oświetlenie sugeruje progowanie adaptacyjne,
+- brak oczywistego progu to dobry moment na Otsu.
+
+```mermaid
+graph TD
+    A[Histogram obrazu] --> B{Dwa wyraźne piki?}
+    B -- Tak --> C[Próg w dolinie]
+    B -- Nie --> D{Nierówne oświetlenie?}
+    D -- Tak --> E[Progowanie adaptacyjne]
+    D -- Nie --> F[Spróbuj globalnego progu]
+```
+
 ______________________________________________________________________
 
 ## Rodzaje progowania
@@ -66,6 +83,12 @@ graph TD
     TZ --> R4[Ciemne piksele wyzerowane]
     TZI --> R5[Jasne piksele wyzerowane]
 ```
+
+### Jak czytać flagi progowania?
+
+- `THRESH_BINARY` i `THRESH_BINARY_INV` są standardem przy binaryzacji.
+- `THRESH_TRUNC` przycina zbyt jasne piksele do wartości progu.
+- `THRESH_TOZERO` i `THRESH_TOZERO_INV` zachowują tylko jedną stronę progu.
 
 ______________________________________________________________________
 

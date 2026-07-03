@@ -64,6 +64,17 @@ cv2.destroyAllWindows()
 
 ![Kontury](assets/06_contours_and_detection/01_contours.png)
 
+### Kontur a wypełniony obiekt
+
+Kontur opisuje granicę obiektu, a nie jego wnętrze. Dzięki temu można mierzyć kształt, obwód i położenie bez analizowania całej tekstury.
+
+```mermaid
+graph LR
+    A[Wypełniony obiekt] --> B[Granica]
+    B --> C[Kontur jako lista punktów]
+    C --> D[Pomiar pola i obwodu]
+```
+
 ______________________________________________________________________
 
 ## Właściwości konturów
@@ -91,6 +102,16 @@ for i, cnt in enumerate(contours):
 # Zachowaj tylko kontury o polu > 500 px²
 duze_kontury = [cnt for cnt in contours if cv2.contourArea(cnt) > 500]
 print(f"Duże kontury: {len(duze_kontury)}")
+```
+
+### Hierarchia konturów
+
+Tryb `RETR_TREE` pozwala śledzić zależności między konturami. To przydatne przy obiektach z dziurami, takich jak litery `O` albo `A`.
+
+```mermaid
+graph TD
+    A[Kontur zewnętrzny] --> B[Kontur wewnętrzny / dziura]
+    A --> C[Inny kontur na tym samym poziomie]
 ```
 
 ### Prostokąt otaczający (Bounding Box)

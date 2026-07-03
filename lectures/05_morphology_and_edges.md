@@ -35,6 +35,32 @@ kernel_manual = np.ones((5, 5), np.uint8)
 | **Top Hat**                | Oryginał − Otwarcie.                                               | Jasne obiekty na ciemnym tle.                   |
 | **Black Hat**              | Domknięcie − Oryginał.                                             | Ciemne obiekty na jasnym tle.                   |
 
+### Intuicja geometryczna
+
+Morfologię można rozumieć jak przesuwanie małej sondy po obrazie. Kernel sprawdza, czy lokalny układ pikseli pasuje do oczekiwanego kształtu.
+
+```mermaid
+graph TD
+    A[Obraz] --> B[Kernel jako sonda]
+    B --> C{Czy lokalny układ pasuje?}
+    C -- Tak --> D[Zachowaj / poszerz]
+    C -- Nie --> E[Usuń / skurcz]
+```
+
+### Obraz binarny a skala szarości
+
+- Na obrazie binarnym operacje działają na wartościach 0 i 255.
+- Na obrazie w skali szarości operacje porównują lokalne jasności.
+- Ta druga wersja bywa używana do usuwania nierównego tła i wydobywania drobnych struktur.
+
+### Wpływ kształtu kernela
+
+| Kształt   | Charakterystyka                              |
+| :-------- | :------------------------------------------- |
+| Prostokąt | Silny wpływ w każdym kierunku                |
+| Elipsa    | Łagodniejszy, bardziej naturalny wpływ       |
+| Krzyż     | Mocniejsza reakcja na osie pionową i poziomą |
+
 ### Diagram: Operacje złożone
 
 ```mermaid
@@ -144,6 +170,10 @@ plt.show()
 
 ![Wpływ iteracji](assets/05_morphology_and_edges/02_iterations.png)
 
+### Dlaczego iteracje są ważne?
+
+Każda kolejna iteracja wzmacnia efekt operacji. W erozji obiekty znikają szybciej, a w dylatacji szybciej się łączą.
+
 ### Praktyczne zastosowanie: usuwanie szumu
 
 ```python
@@ -176,6 +206,10 @@ ______________________________________________________________________
 ## 2. Detekcja Krawędzi
 
 Krawędź to miejsce, gdzie jasność pikseli **gwałtownie się zmienia** (duży gradient). Detekcja krawędzi jest podstawą wielu algorytmów wizji komputerowej.
+
+### Intuicja
+
+Jeżeli sąsiednie piksele mają podobne wartości, obraz jest w tym miejscu gładki. Jeżeli zmiana jest nagła, mamy kandydat na krawędź.
 
 ### Gradient obrazu
 

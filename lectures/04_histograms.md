@@ -28,6 +28,13 @@ graph TD
     H --> E[Dwa piki - bimodalny - tło i obiekt]
 ```
 
+### Jak czytać histogram szybciej?
+
+- położenie środka mówi o jasności,
+- szerokość mówi o kontraście,
+- skupienie przy 0 lub 255 sugeruje niedoświetlenie albo prześwietlenie,
+- dwa piki zwykle oznaczają dwa dominujące poziomy jasności.
+
 ______________________________________________________________________
 
 ## Wyliczanie histogramu w OpenCV
@@ -114,6 +121,16 @@ plt.show()
 
 ![Histogram z maską](assets/04_histograms/03_histogram_mask.png)
 
+### Histogram globalny a lokalny
+
+Histogram globalny opisuje cały obraz. Histogram z maską albo dla ROI pokazuje tylko wybrany fragment i lepiej ujawnia lokalne problemy z oświetleniem.
+
+| Wariant  | Zastosowanie                  |
+| :------- | :---------------------------- |
+| Globalny | Ogólna ocena obrazu           |
+| ROI      | Analiza konkretnego fragmentu |
+| Maska    | Dowolnie zdefiniowany obszar  |
+
 ______________________________________________________________________
 
 ## Equalizacja (Wyrównanie) Histogramu
@@ -130,6 +147,10 @@ Equalizacja poprawia kontrast obrazu przez **rozciągnięcie histogramu** na ca�
 ```
 Nowa_wartość(p) = round( CDF(p) / CDF_max * 255 )
 ```
+
+### Intuicja equalizacji
+
+Equalizacja rozciąga rzadziej występujące poziomy jasności na większy zakres, a te dominujące ściska. Dzięki temu obraz zwykle staje się bardziej czytelny.
 
 ### Diagram: Proces equalizacji
 
@@ -207,6 +228,10 @@ cv2.destroyAllWindows()
 
 ![Equalizacja w HSV](assets/04_histograms/05_equalization_hsv.png)
 
+### Dlaczego nie equalizować bezpośrednio BGR?
+
+Kanały kolorów są ze sobą powiązane. Niezależna equalizacja B, G i R często zmienia relacje między kanałami i daje nienaturalne kolory. Dlatego zwykle operuje się na kanale jasności, np. `V` w HSV.
+
 ______________________________________________________________________
 
 ## CLAHE – Adaptacyjna Equalizacja
@@ -219,6 +244,14 @@ Globalna equalizacja traktuje cały obraz jednakowo. Jeśli obraz ma obszary bar
 
 **CLAHE** (Contrast Limited Adaptive Histogram Equalization) dzieli obraz na małe kafelki i wyrównuje każdy z nich osobno, z ograniczeniem maksymalnego kontrastu (`clipLimit`).
 
+### Jak działa CLAHE krok po kroku?
+
+1. Obraz jest dzielony na kafelki.
+1. Dla każdego kafelka liczony jest lokalny histogram.
+1. Zbyt duże piki są obcinane przez `clipLimit`.
+1. Nadmiar jest redystrybuowany.
+1. Wyniki są łączone przez interpolację.
+
 ```mermaid
 graph TD
     Input[Obraz wejściowy] --> Tiles["Podział na kafle (np. 8×8)"]
@@ -228,6 +261,13 @@ graph TD
     Redist --> Interp[Interpolacja między kaflami]
     Interp --> Output[Wynik CLAHE]
 ```
+
+### Kiedy CLAHE ma przewagę?
+
+- przy nierównym oświetleniu,
+- w obrazach medycznych,
+- przy fotografii dokumentów,
+- gdy globalna equalizacja wzmacnia szum.
 
 ```python
 import cv2

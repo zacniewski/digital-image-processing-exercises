@@ -251,6 +251,28 @@ cv2.destroyAllWindows()
 
 ![ROI skopiowany](assets/01_introduction/05_roi.png)
 
+### Dlaczego dostęp do piksela wygląda jak `img[y, x]`?
+
+W obrazie pierwszy indeks oznacza **wiersz** czyli pozycję pionową, a drugi indeks oznacza **kolumnę** czyli pozycję poziomą.
+
+```mermaid
+graph LR
+    A[Obraz jako macierz] --> B[Wiersze = oś Y]
+    A --> C[Kolumny = oś X]
+    B --> D[img[y, x]]
+    C --> D
+```
+
+### OpenCV a kanały kolorów
+
+OpenCV zapisuje kolor w kolejności **BGR**, a nie RGB. To ważne przy wyświetlaniu i przy ręcznej analizie kanałów.
+
+| Środowisko | Kolejność kanałów  |
+| :--------- | :----------------- |
+| OpenCV     | BGR                |
+| matplotlib | RGB                |
+| NumPy      | Zależnie od danych |
+
 ______________________________________________________________________
 
 ## Zapis obrazu do pliku

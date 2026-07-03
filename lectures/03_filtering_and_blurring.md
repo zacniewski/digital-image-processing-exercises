@@ -110,6 +110,28 @@ plt.show()
 
 ![Metody rozmycia](assets/03_filtering_and_blurring/01_blur_methods.png)
 
+### Co oznacza rozmiar kernela?
+
+Kernel decyduje o tym, ilu sąsiadów wpływa na nową wartość piksela. Im większe jądro, tym mocniejsze wygładzanie i większa utrata drobnych detali.
+
+```mermaid
+graph LR
+    A[Kernel 3×3] --> B[Delikatne rozmycie]
+    C[Kernel 5×5] --> D[Silniejsze rozmycie]
+    E[Kernel 15×15] --> F[Duża utrata detali]
+```
+
+### Co robią piksele na brzegach obrazu?
+
+Przy splotach kernel nie mieści się w pełni na krawędziach. OpenCV musi wtedy przyjąć regułę dopełnienia:
+
+| Tryb               | Zachowanie                    |
+| :----------------- | :---------------------------- |
+| `BORDER_DEFAULT`   | Najczęściej używany kompromis |
+| `BORDER_REPLICATE` | Powiela piksele z brzegu      |
+| `BORDER_REFLECT`   | Odbija obraz na granicy       |
+| `BORDER_CONSTANT`  | Wypełnia stałą wartością      |
+
 ### Wpływ rozmiaru kernela
 
 Im większy kernel, tym silniejsze rozmycie:
@@ -251,6 +273,11 @@ edges_v = cv2.filter2D(img, -1, kernel_edges_v)
 | Sobel Y     | Wiersze: -1,0,+1 z wagami Gaussa            | Krawędzie poziome    |
 | Laplacian   | Środek=4 lub 8, sąsiedzi=-1                 | Wszystkie krawędzie  |
 | Emboss      | Przekątna ujemna/dodatnia                   | Efekt reliefu 3D     |
+
+### Dwie praktyczne zasady
+
+- Kernel o sumie wag równej `1` zwykle zachowuje podobną jasność.
+- Suma wag większa od `1` rozjaśnia obraz, a mniejsza od `1` go przyciemnia.
 
 ______________________________________________________________________
 
