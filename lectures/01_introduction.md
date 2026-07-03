@@ -95,7 +95,7 @@ Głębia bitowa określa, ile wartości może przyjąć jeden piksel:
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 print(f"Typ danych: {img.dtype}")  # uint8
 print(f"Kształt: {img.shape}")  # (wysokość, szerokość, kanały)
 print(f"Min: {img.min()}, Max: {img.max()}")
@@ -115,11 +115,11 @@ import cv2
 import numpy as np
 
 # Wczytanie obrazu w kolorze (domyślnie BGR)
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # Wczytanie w skali szarości
-gray = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
-# lub: gray = cv2.imread("obrazki/bird.jpg", 0)
+gray = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
+# lub: gray = cv2.imread("obrazki/duze/bird.jpg", 0)
 
 # Pobranie wymiarów (wysokość, szerokość, liczba kanałów)
 (h, w, c) = img.shape
@@ -134,6 +134,8 @@ cv2.imshow("Ptak", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Ptak](assets/01_introduction/01_original.png)
 
 ### Konwersja przestrzeni barw
 
@@ -160,6 +162,8 @@ axes[2].set_title("HSV")
 plt.show()
 ```
 
+![RGB, skala szarości i HSV](assets/01_introduction/02_color_spaces.png)
+
 ### Rozdzielanie i łączenie kanałów
 
 ```python
@@ -180,6 +184,8 @@ merged = cv2.merge([b, g, r])
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Kanał czerwony](assets/01_introduction/03_red_channel.png)
 
 ______________________________________________________________________
 
@@ -225,10 +231,12 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+![Canvas z rysunkami](assets/01_introduction/04_canvas.png)
+
 ### Przykład: Region of Interest (ROI) – kopiowanie fragmentu
 
 ```python
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # Wycięcie fragmentu (ROI) – np. górna lewa ćwiartka
 roi = img[0 : img.shape[0] // 2, 0 : img.shape[1] // 2]
@@ -240,6 +248,8 @@ cv2.imshow("ROI skopiowany", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![ROI skopiowany](assets/01_introduction/05_roi.png)
 
 ______________________________________________________________________
 

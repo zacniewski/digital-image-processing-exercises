@@ -82,7 +82,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 _, binary = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 
 kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
@@ -116,6 +116,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Operacje morfologiczne](assets/05_morphology_and_edges/01_morphology_ops.png)
+
 ### Iteracje – wpływ liczby powtórzeń
 
 ```python
@@ -123,7 +125,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 _, binary = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 kernel = np.ones((3, 3), np.uint8)
 
@@ -140,13 +142,15 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Wpływ iteracji](assets/05_morphology_and_edges/02_iterations.png)
+
 ### Praktyczne zastosowanie: usuwanie szumu
 
 ```python
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 _, binary = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 
 # Dodanie sztucznego szumu (małe białe kropki)
@@ -164,6 +168,8 @@ cv2.imshow("Po otwarciu", cleaned)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Otwieranie usuwa szum](assets/05_morphology_and_edges/03_opening_noise.png)
 
 ______________________________________________________________________
 
@@ -211,7 +217,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Gradient X (krawędzie pionowe)
 sobelX = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=3)
@@ -239,6 +245,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Sobel](assets/05_morphology_and_edges/04_sobel.png)
+
 ______________________________________________________________________
 
 ## Operator Laplaciana
@@ -249,7 +257,7 @@ Laplacian oblicza **drugą pochodną** – wykrywa miejsca, gdzie gradient zmien
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Rozmycie przed Laplacianem (redukcja szumu)
 blurred = cv2.GaussianBlur(img, (3, 3), 0)
@@ -262,6 +270,8 @@ cv2.imshow("Laplacian", laplacian)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Laplacian](assets/05_morphology_and_edges/05_laplacian.png)
 
 ______________________________________________________________________
 
@@ -308,7 +318,7 @@ graph LR
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Rozmycie przed Canny (opcjonalne, ale zalecane)
 blurred = cv2.GaussianBlur(img, (5, 5), 0)
@@ -332,13 +342,15 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Canny](assets/05_morphology_and_edges/06_canny.png)
+
 ### Interaktywny Canny z Trackbarem
 
 ```python
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 blurred = cv2.GaussianBlur(img, (5, 5), 0)
 
 
@@ -375,7 +387,7 @@ def auto_canny(image, sigma=0.33):
     return cv2.Canny(image, low, high)
 
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 blurred = cv2.GaussianBlur(img, (5, 5), 0)
 edges = auto_canny(blurred)
 
@@ -393,7 +405,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 blurred = cv2.GaussianBlur(img, (3, 3), 0)
 
 # Sobel
@@ -417,6 +429,8 @@ for ax, obraz, tytul in zip(
 plt.tight_layout()
 plt.show()
 ```
+
+![Porównanie krawędzi](assets/05_morphology_and_edges/07_edge_compare.png)
 
 ______________________________________________________________________
 

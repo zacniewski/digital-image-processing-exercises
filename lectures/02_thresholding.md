@@ -77,7 +77,7 @@ ______________________________________________________________________
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 typy = [
     ("BINARY", cv2.THRESH_BINARY),
@@ -101,6 +101,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Typy progowania](assets/02_thresholding/01_threshold_types.png)
+
 ### Metoda Otsu – automatyczny próg
 
 Metoda Otsu analizuje histogram i wybiera próg minimalizujący wariancję wewnątrzklasową (między pikselami tła i obiektu).
@@ -115,7 +117,7 @@ graph TD
 ```python
 import cv2
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Otsu – próg 0 jest ignorowany, OpenCV wylicza go automatycznie
 (T, thresh_otsu) = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -128,6 +130,8 @@ blurred = cv2.GaussianBlur(img, (5, 5), 0)
 (T2, thresh_otsu2) = cv2.threshold(blurred, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 print(f"Próg Otsu po Gaussie: {T2}")
 ```
+
+![Otsu i progowanie adaptacyjne](assets/02_thresholding/02_otsu_compare.png)
 
 ### Progowanie adaptacyjne
 
@@ -158,6 +162,8 @@ cv2.imshow("Gaussian", thresh_gauss)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Progowanie adaptacyjne Mean i Gaussian](assets/02_thresholding/03_adaptive_mean_gaussian.png)
 
 **Parametry adaptiveThreshold:**
 
@@ -199,7 +205,7 @@ ______________________________________________________________________
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 
 def aktualizuj(val):

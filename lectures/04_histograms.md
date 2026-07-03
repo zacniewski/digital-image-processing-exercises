@@ -38,7 +38,7 @@ ______________________________________________________________________
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # cv2.calcHist(images, channels, mask, histSize, ranges)
 # images  – lista obrazów wejściowych
@@ -59,13 +59,15 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
+![Histogram jasności](assets/04_histograms/01_histogram_gray.png)
+
 ### Histogram dla obrazów kolorowych (BGR)
 
 ```python
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 kolory = [("Niebieski", 0, "blue"), ("Zielony", 1, "green"), ("Czerwony", 2, "red")]
 
@@ -83,6 +85,8 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
+![Histogram kanałów BGR](assets/04_histograms/02_histogram_bgr.png)
+
 ### Histogram z maską (tylko fragment obrazu)
 
 ```python
@@ -90,7 +94,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Tworzenie maski – biały prostokąt = obszar analizy
 mask = np.zeros(img.shape, dtype="uint8")
@@ -107,6 +111,8 @@ plt.legend()
 plt.title("Histogram z maską vs pełny")
 plt.show()
 ```
+
+![Histogram z maską](assets/04_histograms/03_histogram_mask.png)
 
 ______________________________________________________________________
 
@@ -142,7 +148,7 @@ graph LR
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Equalizacja działa tylko na obrazach w skali szarości!
 equalized = cv2.equalizeHist(img)
@@ -171,6 +177,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Equalizacja histogramu](assets/04_histograms/04_equalization_gray.png)
+
 ### Equalizacja obrazu kolorowego
 
 Equalizacja bezpośrednio na kanałach BGR daje nienaturalne kolory. Lepiej przekonwertować do HSV i wyrównać tylko kanał V (jasność):
@@ -178,7 +186,7 @@ Equalizacja bezpośrednio na kanałach BGR daje nienaturalne kolory. Lepiej prze
 ```python
 import cv2
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # Konwersja do HSV
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -196,6 +204,8 @@ cv2.imshow("Equalizacja HSV", result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Equalizacja w HSV](assets/04_histograms/05_equalization_hsv.png)
 
 ______________________________________________________________________
 
@@ -223,7 +233,7 @@ graph TD
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Globalna equalizacja
 eq_global = cv2.equalizeHist(img)
@@ -246,6 +256,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![CLAHE](assets/04_histograms/06_clahe_comparison.png)
+
 ### Porównanie: Globalna vs CLAHE
 
 | Cecha              | Globalna equalizacja  | CLAHE                         |
@@ -265,7 +277,7 @@ Histogramy można porównywać, aby sprawdzić podobieństwo obrazów (np. do wy
 ```python
 import cv2
 
-img1 = cv2.imread("obrazki/bird.jpg")
+img1 = cv2.imread("obrazki/duze/bird.jpg")
 img2 = cv2.imread("obrazki/duze/obrazek.jpg")
 
 # Konwersja do HSV

@@ -78,7 +78,7 @@ graph TD
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # 1. Averaging (Box Filter) – prosta średnia
 avg = cv2.blur(img, (5, 5))
@@ -108,6 +108,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Metody rozmycia](assets/03_filtering_and_blurring/01_blur_methods.png)
+
 ### Wpływ rozmiaru kernela
 
 Im większy kernel, tym silniejsze rozmycie:
@@ -116,7 +118,7 @@ Im większy kernel, tym silniejsze rozmycie:
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 rozmiary = [3, 7, 15, 31]
 fig, axes = plt.subplots(1, len(rozmiary) + 1, figsize=(20, 4))
@@ -132,13 +134,15 @@ plt.tight_layout()
 plt.show()
 ```
 
+![Wpływ rozmiaru kernela](assets/03_filtering_and_blurring/02_kernel_sizes.png)
+
 ### Szum "sól i pieprz" – dlaczego Median jest lepszy?
 
 ```python
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("obrazki/duze/bird.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Dodanie szumu "sól i pieprz"
 noise = img.copy()
@@ -167,7 +171,7 @@ Wyostrzanie polega na **wzmocnieniu różnic** między sąsiednimi pikselami (wy
 import numpy as np
 import cv2
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # Kernel wyostrzający podstawowy
 kernel_sharp = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]], dtype=np.float32)
@@ -193,7 +197,7 @@ wyostrzony = oryginał + α * (oryginał - rozmyty)
 ```python
 import cv2
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # Rozmycie Gaussowskie
 blurred = cv2.GaussianBlur(img, (0, 0), 2.0)
@@ -207,6 +211,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+![Unsharp Masking](assets/03_filtering_and_blurring/03_unsharp.png)
+
 ______________________________________________________________________
 
 ## 3. Własne kernele – cv2.filter2D
@@ -217,7 +223,7 @@ Funkcja `cv2.filter2D` pozwala zastosować **dowolny kernel** do obrazu:
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 # Kernel emboss (efekt reliefu)
 kernel_emboss = np.array([[-2, -1, 0], [-1, 1, 1], [0, 1, 2]], dtype=np.float32)
@@ -232,6 +238,8 @@ emboss = cv2.filter2D(img, -1, kernel_emboss)
 edges_h = cv2.filter2D(img, -1, kernel_edges_h)
 edges_v = cv2.filter2D(img, -1, kernel_edges_v)
 ```
+
+![Własne kernele](assets/03_filtering_and_blurring/04_custom_kernels.png)
 
 ### Tabela popularnych kerneli
 
@@ -279,7 +287,7 @@ ______________________________________________________________________
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 
 
 def aktualizuj(val):

@@ -34,7 +34,7 @@ graph TD
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Progowanie – kontury działają na obrazach binarnych
@@ -62,6 +62,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+![Kontury](assets/06_contours_and_detection/01_contours.png)
+
 ______________________________________________________________________
 
 ## Właściwości konturów
@@ -72,7 +74,7 @@ ______________________________________________________________________
 import cv2
 import numpy as np
 
-img = cv2.imread("obrazki/bird.jpg")
+img = cv2.imread("obrazki/duze/bird.jpg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -114,6 +116,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+![Bounding Box](assets/06_contours_and_detection/02_bounding_box.png)
+
 ### Okrąg i elipsa otaczająca
 
 ```python
@@ -138,6 +142,8 @@ cv2.imshow("Okrąg otaczający", img_copy)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Okrąg otaczający](assets/06_contours_and_detection/03_enclosing_circle.png)
 
 ### Aproksymacja kształtu konturu
 
@@ -173,6 +179,8 @@ cv2.imshow("Rozpoznawanie kształtów", img_copy)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Rozpoznawanie kształtów](assets/06_contours_and_detection/04_shapes.png)
 
 ______________________________________________________________________
 
@@ -227,6 +235,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+![Detekcja twarzy](assets/06_contours_and_detection/05_face_detection.png)
+
 ### Detekcja twarzy i oczu jednocześnie
 
 ```python
@@ -255,6 +265,8 @@ cv2.imshow("Twarze i oczy", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+
+![Twarze i oczy](assets/06_contours_and_detection/06_face_eyes.png)
 
 ### Detekcja w czasie rzeczywistym (kamera)
 
