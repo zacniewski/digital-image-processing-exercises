@@ -267,7 +267,7 @@ W obrazie pierwszy indeks oznacza **wiersz** czyli pozycję pionową, a drugi in
 graph LR
     A[Obraz jako macierz] --> B[Wiersze = oś Y]
     A --> C[Kolumny = oś X]
-    B --> D[img[y, x]]
+    B --> D["img[y, x]"]
     C --> D
 ```
 
