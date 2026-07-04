@@ -124,8 +124,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Typy progowania](assets/02_thresholding/01_threshold_types.png)
 
+Obraz nr 2:
 ![Typy progowania - granite](assets/02_thresholding/01_threshold_types_granite.png)
 
 ### Metoda Otsu – automatyczny próg
@@ -156,8 +158,10 @@ blurred = cv2.GaussianBlur(img, (5, 5), 0)
 print(f"Próg Otsu po Gaussie: {T2}")
 ```
 
+Obraz nr 1:
 ![Otsu i progowanie adaptacyjne](assets/02_thresholding/02_otsu_compare.png)
 
+Obraz nr 2:
 ![Otsu i progowanie adaptacyjne - granite](assets/02_thresholding/02_otsu_compare_granite.png)
 
 ### Progowanie adaptacyjne

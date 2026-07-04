@@ -135,7 +135,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Ptak](assets/01_introduction/01_original.png)
+
+Obraz nr 2:
 
 ![Granite](assets/01_introduction/01_original_granite.png)
 
@@ -164,7 +167,11 @@ axes[2].set_title("HSV")
 plt.show()
 ```
 
+Obraz nr 1:
+
 ![RGB, skala szarości i HSV](assets/01_introduction/02_color_spaces.png)
+
+Obraz nr 2:
 
 ![Granite - RGB, skala szarości i HSV](assets/01_introduction/02_color_spaces_granite.png)
 
@@ -255,8 +262,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![ROI skopiowany](assets/01_introduction/05_roi.png)
 
+Obraz nr 2:
 ![Granite - ROI skopiowany](assets/01_introduction/05_roi_granite.png)
 
 ### Dlaczego dostęp do piksela wygląda jak `img[y, x]`?

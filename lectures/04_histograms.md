@@ -66,8 +66,10 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
+Obraz nr 1:
 ![Histogram jasności](assets/04_histograms/01_histogram_gray.png)
 
+Obraz nr 2:
 ![Histogram jasności - granite](assets/04_histograms/01_histogram_gray_granite.png)
 
 ### Histogram dla obrazów kolorowych (BGR)
@@ -94,8 +96,10 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
+Obraz nr 1:
 ![Histogram kanałów BGR](assets/04_histograms/02_histogram_bgr.png)
 
+Obraz nr 2:
 ![Histogram kanałów BGR - granite](assets/04_histograms/02_histogram_bgr_granite.png)
 
 ### Histogram z maską (tylko fragment obrazu)
@@ -123,8 +127,10 @@ plt.title("Histogram z maską vs pełny")
 plt.show()
 ```
 
+Obraz nr 1:
 ![Histogram z maską](assets/04_histograms/03_histogram_mask.png)
 
+Obraz nr 2:
 ![Histogram z maską - granite](assets/04_histograms/03_histogram_mask_granite.png)
 
 ### Histogram globalny a lokalny
@@ -204,8 +210,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Equalizacja histogramu](assets/04_histograms/04_equalization_gray.png)
 
+Obraz nr 2:
 ![Equalizacja histogramu - granite](assets/04_histograms/04_equalization_gray_granite.png)
 
 ### Equalizacja obrazu kolorowego
@@ -234,8 +242,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Equalizacja w HSV](assets/04_histograms/05_equalization_hsv.png)
 
+Obraz nr 2:
 ![Equalizacja w HSV - granite](assets/04_histograms/05_equalization_hsv_granite.png)
 
 ### Dlaczego nie equalizować bezpośrednio BGR?
@@ -306,8 +316,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![CLAHE](assets/04_histograms/06_clahe_comparison.png)
 
+Obraz nr 2:
 ![CLAHE - granite](assets/04_histograms/06_clahe_comparison_granite.png)
 
 ### Porównanie: Globalna vs CLAHE

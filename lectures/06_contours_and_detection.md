@@ -62,8 +62,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Kontury](assets/06_contours_and_detection/01_contours.png)
 
+Obraz nr 2:
 ![Kontury - granite](assets/06_contours_and_detection/01_contours_granite.png)
 
 ### Kontur a wypełniony obiekt
@@ -139,8 +141,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Bounding Box](assets/06_contours_and_detection/02_bounding_box.png)
 
+Obraz nr 2:
 ![Bounding Box - granite](assets/06_contours_and_detection/02_bounding_box_granite.png)
 
 ### Okrąg i elipsa otaczająca
@@ -168,8 +172,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Okrąg otaczający](assets/06_contours_and_detection/03_enclosing_circle.png)
 
+Obraz nr 2;
 ![Okrąg otaczający - granite](assets/06_contours_and_detection/03_enclosing_circle_granite.png)
 
 ### Aproksymacja kształtu konturu
@@ -207,8 +213,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Rozpoznawanie kształtów](assets/06_contours_and_detection/04_shapes.png)
 
+Obraz nr 2:
 ![Rozpoznawanie kształtów - granite](assets/06_contours_and_detection/04_shapes_granite.png)
 
 ______________________________________________________________________

@@ -142,8 +142,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Operacje morfologiczne](assets/05_morphology_and_edges/01_morphology_ops.png)
 
+Obraz nr 2:
 ![Operacje morfologiczne - granite](assets/05_morphology_and_edges/01_morphology_ops_granite.png)
 
 ### Iteracje – wpływ liczby powtórzeń
@@ -170,8 +172,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Wpływ iteracji](assets/05_morphology_and_edges/02_iterations.png)
 
+Obraz nr 2:
 ![Wpływ iteracji - granite](assets/05_morphology_and_edges/02_iterations_granite.png)
 
 ### Dlaczego iteracje są ważne?
@@ -203,8 +207,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Otwieranie usuwa szum](assets/05_morphology_and_edges/03_opening_noise.png)
 
+Obraz nr 2:
 ![Otwieranie usuwa szum - granite](assets/05_morphology_and_edges/03_opening_noise_granite.png)
 
 ______________________________________________________________________
@@ -285,8 +291,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Sobel](assets/05_morphology_and_edges/04_sobel.png)
 
+Obraz nr 2:
 ![Sobel - granite](assets/05_morphology_and_edges/04_sobel_granite.png)
 
 ______________________________________________________________________
@@ -313,8 +321,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Obraz nr 1:
 ![Laplacian](assets/05_morphology_and_edges/05_laplacian.png)
 
+Obraz nr 2:
 ![Laplacian - granite](assets/05_morphology_and_edges/05_laplacian_granite.png)
 
 ______________________________________________________________________
@@ -386,8 +396,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Canny](assets/05_morphology_and_edges/06_canny.png)
 
+Obraz nr 2:
 ![Canny - granite](assets/05_morphology_and_edges/06_canny_granite.png)
 
 ### Interaktywny Canny z Trackbarem
@@ -476,8 +488,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+Obraz nr 1:
 ![Porównanie krawędzi](assets/05_morphology_and_edges/07_edge_compare.png)
 
+Obraz nr 2:
 ![Porównanie krawędzi - granite](assets/05_morphology_and_edges/07_edge_compare_granite.png)
 
 ______________________________________________________________________
