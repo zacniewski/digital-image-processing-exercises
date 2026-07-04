@@ -126,6 +126,8 @@ plt.show()
 
 ![Typy progowania](assets/02_thresholding/01_threshold_types.png)
 
+![Typy progowania - granite](assets/02_thresholding/01_threshold_types_granite.png)
+
 ### Metoda Otsu – automatyczny próg
 
 Metoda Otsu analizuje histogram i wybiera próg minimalizujący wariancję wewnątrzklasową (między pikselami tła i obiektu).
@@ -155,6 +157,8 @@ print(f"Próg Otsu po Gaussie: {T2}")
 ```
 
 ![Otsu i progowanie adaptacyjne](assets/02_thresholding/02_otsu_compare.png)
+
+![Otsu i progowanie adaptacyjne - granite](assets/02_thresholding/02_otsu_compare_granite.png)
 
 ### Progowanie adaptacyjne
 

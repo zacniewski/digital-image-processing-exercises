@@ -144,6 +144,8 @@ plt.show()
 
 ![Operacje morfologiczne](assets/05_morphology_and_edges/01_morphology_ops.png)
 
+![Operacje morfologiczne - granite](assets/05_morphology_and_edges/01_morphology_ops_granite.png)
+
 ### Iteracje – wpływ liczby powtórzeń
 
 ```python
@@ -169,6 +171,8 @@ plt.show()
 ```
 
 ![Wpływ iteracji](assets/05_morphology_and_edges/02_iterations.png)
+
+![Wpływ iteracji - granite](assets/05_morphology_and_edges/02_iterations_granite.png)
 
 ### Dlaczego iteracje są ważne?
 
@@ -200,6 +204,8 @@ cv2.destroyAllWindows()
 ```
 
 ![Otwieranie usuwa szum](assets/05_morphology_and_edges/03_opening_noise.png)
+
+![Otwieranie usuwa szum - granite](assets/05_morphology_and_edges/03_opening_noise_granite.png)
 
 ______________________________________________________________________
 
@@ -281,6 +287,8 @@ plt.show()
 
 ![Sobel](assets/05_morphology_and_edges/04_sobel.png)
 
+![Sobel - granite](assets/05_morphology_and_edges/04_sobel_granite.png)
+
 ______________________________________________________________________
 
 ## Operator Laplaciana
@@ -306,6 +314,8 @@ cv2.destroyAllWindows()
 ```
 
 ![Laplacian](assets/05_morphology_and_edges/05_laplacian.png)
+
+![Laplacian - granite](assets/05_morphology_and_edges/05_laplacian_granite.png)
 
 ______________________________________________________________________
 
@@ -377,6 +387,8 @@ plt.show()
 ```
 
 ![Canny](assets/05_morphology_and_edges/06_canny.png)
+
+![Canny - granite](assets/05_morphology_and_edges/06_canny_granite.png)
 
 ### Interaktywny Canny z Trackbarem
 
@@ -465,6 +477,8 @@ plt.show()
 ```
 
 ![Porównanie krawędzi](assets/05_morphology_and_edges/07_edge_compare.png)
+
+![Porównanie krawędzi - granite](assets/05_morphology_and_edges/07_edge_compare_granite.png)
 
 ______________________________________________________________________
 

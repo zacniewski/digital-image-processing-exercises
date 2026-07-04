@@ -64,6 +64,8 @@ cv2.destroyAllWindows()
 
 ![Kontury](assets/06_contours_and_detection/01_contours.png)
 
+![Kontury - granite](assets/06_contours_and_detection/01_contours_granite.png)
+
 ### Kontur a wypełniony obiekt
 
 Kontur opisuje granicę obiektu, a nie jego wnętrze. Dzięki temu można mierzyć kształt, obwód i położenie bez analizowania całej tekstury.
@@ -139,6 +141,8 @@ cv2.destroyAllWindows()
 
 ![Bounding Box](assets/06_contours_and_detection/02_bounding_box.png)
 
+![Bounding Box - granite](assets/06_contours_and_detection/02_bounding_box_granite.png)
+
 ### Okrąg i elipsa otaczająca
 
 ```python
@@ -165,6 +169,8 @@ cv2.destroyAllWindows()
 ```
 
 ![Okrąg otaczający](assets/06_contours_and_detection/03_enclosing_circle.png)
+
+![Okrąg otaczający - granite](assets/06_contours_and_detection/03_enclosing_circle_granite.png)
 
 ### Aproksymacja kształtu konturu
 
@@ -202,6 +208,8 @@ cv2.destroyAllWindows()
 ```
 
 ![Rozpoznawanie kształtów](assets/06_contours_and_detection/04_shapes.png)
+
+![Rozpoznawanie kształtów - granite](assets/06_contours_and_detection/04_shapes_granite.png)
 
 ______________________________________________________________________
 

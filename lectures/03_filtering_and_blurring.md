@@ -110,6 +110,8 @@ plt.show()
 
 ![Metody rozmycia](assets/03_filtering_and_blurring/01_blur_methods.png)
 
+![Metody rozmycia - granite](assets/03_filtering_and_blurring/01_blur_methods_granite.png)
+
 ### Co oznacza rozmiar kernela?
 
 Kernel decyduje o tym, ilu sąsiadów wpływa na nową wartość piksela. Im większe jądro, tym mocniejsze wygładzanie i większa utrata drobnych detali.
@@ -157,6 +159,8 @@ plt.show()
 ```
 
 ![Wpływ rozmiaru kernela](assets/03_filtering_and_blurring/02_kernel_sizes.png)
+
+![Wpływ rozmiaru kernela - granite](assets/03_filtering_and_blurring/02_kernel_sizes_granite.png)
 
 ### Szum "sól i pieprz" – dlaczego Median jest lepszy?
 
@@ -235,6 +239,8 @@ cv2.destroyAllWindows()
 
 ![Unsharp Masking](assets/03_filtering_and_blurring/03_unsharp.png)
 
+![Unsharp Masking - granite](assets/03_filtering_and_blurring/03_unsharp_granite.png)
+
 ______________________________________________________________________
 
 ## 3. Własne kernele – cv2.filter2D
@@ -262,6 +268,8 @@ edges_v = cv2.filter2D(img, -1, kernel_edges_v)
 ```
 
 ![Własne kernele](assets/03_filtering_and_blurring/04_custom_kernels.png)
+
+![Własne kernele - granite](assets/03_filtering_and_blurring/04_custom_kernels_granite.png)
 
 ### Tabela popularnych kerneli
 

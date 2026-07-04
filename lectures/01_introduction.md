@@ -137,6 +137,8 @@ cv2.destroyAllWindows()
 
 ![Ptak](assets/01_introduction/01_original.png)
 
+![Granite](assets/01_introduction/01_original_granite.png)
+
 ### Konwersja przestrzeni barw
 
 ```python
@@ -164,6 +166,8 @@ plt.show()
 
 ![RGB, skala szarości i HSV](assets/01_introduction/02_color_spaces.png)
 
+![Granite - RGB, skala szarości i HSV](assets/01_introduction/02_color_spaces_granite.png)
+
 ### Rozdzielanie i łączenie kanałów
 
 ```python
@@ -186,6 +190,8 @@ cv2.destroyAllWindows()
 ```
 
 ![Kanał czerwony](assets/01_introduction/03_red_channel.png)
+
+![Granite - kanał czerwony](assets/01_introduction/03_red_channel_granite.png)
 
 ______________________________________________________________________
 
@@ -250,6 +256,8 @@ cv2.destroyAllWindows()
 ```
 
 ![ROI skopiowany](assets/01_introduction/05_roi.png)
+
+![Granite - ROI skopiowany](assets/01_introduction/05_roi_granite.png)
 
 ### Dlaczego dostęp do piksela wygląda jak `img[y, x]`?
 

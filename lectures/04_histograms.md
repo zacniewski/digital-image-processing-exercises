@@ -68,6 +68,8 @@ plt.show()
 
 ![Histogram jasności](assets/04_histograms/01_histogram_gray.png)
 
+![Histogram jasności - granite](assets/04_histograms/01_histogram_gray_granite.png)
+
 ### Histogram dla obrazów kolorowych (BGR)
 
 ```python
@@ -93,6 +95,8 @@ plt.show()
 ```
 
 ![Histogram kanałów BGR](assets/04_histograms/02_histogram_bgr.png)
+
+![Histogram kanałów BGR - granite](assets/04_histograms/02_histogram_bgr_granite.png)
 
 ### Histogram z maską (tylko fragment obrazu)
 
@@ -120,6 +124,8 @@ plt.show()
 ```
 
 ![Histogram z maską](assets/04_histograms/03_histogram_mask.png)
+
+![Histogram z maską - granite](assets/04_histograms/03_histogram_mask_granite.png)
 
 ### Histogram globalny a lokalny
 
@@ -200,6 +206,8 @@ plt.show()
 
 ![Equalizacja histogramu](assets/04_histograms/04_equalization_gray.png)
 
+![Equalizacja histogramu - granite](assets/04_histograms/04_equalization_gray_granite.png)
+
 ### Equalizacja obrazu kolorowego
 
 Equalizacja bezpośrednio na kanałach BGR daje nienaturalne kolory. Lepiej przekonwertować do HSV i wyrównać tylko kanał V (jasność):
@@ -227,6 +235,8 @@ cv2.destroyAllWindows()
 ```
 
 ![Equalizacja w HSV](assets/04_histograms/05_equalization_hsv.png)
+
+![Equalizacja w HSV - granite](assets/04_histograms/05_equalization_hsv_granite.png)
 
 ### Dlaczego nie equalizować bezpośrednio BGR?
 
@@ -297,6 +307,8 @@ plt.show()
 ```
 
 ![CLAHE](assets/04_histograms/06_clahe_comparison.png)
+
+![CLAHE - granite](assets/04_histograms/06_clahe_comparison_granite.png)
 
 ### Porównanie: Globalna vs CLAHE
 
